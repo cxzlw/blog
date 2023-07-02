@@ -104,4 +104,4 @@ theme: landscape
 deploy:
 - type: git
   repo: git@github.com:cxzlw/cxzlw.github.io.git
-  branch: pages
+  branch: master
