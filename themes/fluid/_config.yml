@@ -720,11 +720,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    type: cusdis
 
 
 #---------------------------
@@ -856,8 +856,8 @@ twikoo:
 # Based on third-party or self-hosted service
 # See https://cusdis.com
 cusdis:
-  host:
-  app_id:
+  host: "https://cusdis.com"
+  app_id: "bd220f7c-6b55-463a-912f-6e5a10b9b460"
   lang: zh-cn
 
 # Giscus
@@ -1033,11 +1033,11 @@ links:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    type: cusdis
 
 
 #---------------------------
