@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"markdown.copyFiles.destination": {
+			"*": "/source/imgs/"
+		}
+	}
+}
