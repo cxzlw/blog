@@ -1,7 +1,7 @@
 ---
 title: 聊聊知乎盐选反爬 (回答页篇)
 date: 2023-07-05 01:49:31
-index_img: /imgs/image.png
+index_img: /img/image.png
 excerpt: 近些阵子，知乎上线了针对专栏中盐选文章的反爬系统，随后该系统也被运用在知乎回答页面中的盐选文章上。具体表现为爬取的文章内容中出现大量的错乱词汇。而在本篇文章中，我们将一步步带领各位解开这些乱码。在这个过程中，我们将对字体反爬有更深入的认识，并学到运用字体反爬时需要注意的问题。
 tags: 
  - 知乎
@@ -15,7 +15,7 @@ tags:
 
 来自知乎回答[不被爱是一种什么样的感受？ - 知乎](https://www.zhihu.com/question/41922324/answer/3073556909)
 
-![乱码示意图](../imgs/image.png) 
+![乱码示意图](../img/image.png) 
 
 如图所示，在页面源码中出现了大量乱码，例如（原字，错字）：[^2]
 
@@ -31,18 +31,18 @@ tags:
 
 接下来我们打开 F12 -> Network 页面，选择 Font，观察知乎加载的字体。
 
-![知乎加载的字体](../imgs/image-1.png)
+![知乎加载的字体](../img/image-1.png)
 
 右键选择 Open in new tab 将字体保存下来。
 
-![下载的字体文件](../imgs/image-2.png)
+![下载的字体文件](../img/image-2.png)
 
 将字体后缀名改为 .ttf [^3] 并打开。
 
 
 {% gi total 2 %}
-![正常字体](../imgs/image-3.png)
-![反爬字体](../imgs/image-4.png)
+![正常字体](../img/image-3.png)
+![反爬字体](../img/image-4.png)
 {% endgi %}
 <figcaption aria-hidden="true" class="image-caption">左：正常字体 右：反爬字体</figcaption>
 
@@ -54,7 +54,7 @@ tags:
 
 我们打开 [FontDrop!](https://fontdrop.info/) 加载字体，向下翻，观察字形的特征。
 
-![字体中的字形](../imgs/image-5.png)
+![字体中的字形](../img/image-5.png)
 
 我们发现字形的 Glyph 为 uni662F 而 Unicode 为 65F6，接下来我们试着查询这两个十六进制数对应的字：
 
