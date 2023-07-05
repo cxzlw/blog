@@ -2,13 +2,13 @@
 title: 聊聊知乎盐选反爬 (回答页篇)
 date: 2023-07-05 01:49:31
 index_img: /imgs/image.png
-excerpt: 近些阵子知乎上线了针对专栏中盐选文章的反爬系统，随后该系统也被运用在知乎回答页面中的盐选文章上，具体表现为爬取的文章内容中出现大量的错乱词汇。而在本篇文章中我们将一步步带领各位解开这些乱码，在这个过程中我们将对字体反爬有更深入的认识，并学到运用字体反爬时需要注意的问题。
+excerpt: 近些阵子，知乎上线了针对专栏中盐选文章的反爬系统，随后该系统也被运用在知乎回答页面中的盐选文章上。具体表现为爬取的文章内容中出现大量的错乱词汇。而在本篇文章中，我们将一步步带领各位解开这些乱码。在这个过程中，我们将对字体反爬有更深入的认识，并学到运用字体反爬时需要注意的问题。
 tags: 
  - 知乎
  - 反爬
 ---
 
-近些阵子知乎上线了针对专栏[^1]中盐选文章的反爬系统，随后该系统也被运用在知乎回答页面中的盐选文章上，具体表现为爬取的文章内容中出现大量的错乱词汇。而在本篇文章中我们将一步步带领各位解开这些乱码，在这个过程中我们将对字体反爬有更深入的认识，并学到运用字体反爬时需要注意的问题。
+近些阵子，知乎上线了针对专栏[^1]中盐选文章的反爬系统，随后该系统也被运用在知乎回答页面中的盐选文章上。具体表现为爬取的文章内容中出现大量的错乱词汇。而在本篇文章中，我们将一步步带领各位解开这些乱码。在这个过程中，我们将对字体反爬有更深入的认识，并学到运用字体反爬时需要注意的问题。
 
 
 ## 一、知乎反爬效果
@@ -65,13 +65,13 @@ print(glyph, unicode)
 # output: 是 时
 ```
 
-正好，上文提到，「是」在源码中被替换为了「时」。知乎在反爬字体中保留了原字与新字的对应关系，为我们提供了一个极为便捷的捷径，避免了对字形笔画的具体分析，这也是其字体反爬系统的致命缺陷，各位在自己的网站运用字体反爬时也要注意这一点。
+正好，上文提到，「是」在源码中被替换为了「时」。知乎在反爬字体中保留了原字与新字的对应关系，为我们提供了一个极为便捷的捷径。我们可以直接读取这个对应关系，而不是比对每个字的笔画[^4]。然而，这也是其字体反爬系统的致命缺陷，各位在自己的网站运用字体反爬时也要注意这一点。
 
 至此，字形的特征与对应关系都被我们分析出了，接下来我们将编写程序从字体中提取对应关系。
 
 ## 四、提取对应关系
 
-要提取各个字间的对应关系，首先我们需要安装 fontTools [^4]。
+要提取各个字间的对应关系，首先我们需要安装 fontTools [^5]。
 
 ```bash
 pip install fonttools
@@ -91,7 +91,7 @@ font = ttLib.TTFont(input("Input font filename: "))
 zhihu_dict = {}
 ```
 
-遍历字形，获得其 Glyph 与 Unicode，并写入字典（注意这里的Glyph对应的字可能不是标准的字，比如是康熙部首[^5]，因此我们要对其标准化[^6]）：
+遍历字形，获得其 Glyph 与 Unicode，并写入字典（注意这里的Glyph对应的字可能不是标准的字，比如是康熙部首[^6]，因此我们要对其标准化[^7]）：
 
 ```python
 from unicodedata import normalize
@@ -104,7 +104,7 @@ for x in cmap.items():
 print(zhihu_dict)  # {'一': '不', ......, '这': '发'}
 ```
 
-（这里的 cmap 是一个 dict，是字形的 {Unicode: Glyph}[^7]）
+（这里的 cmap 是一个 dict，是字形的 {Unicode: Glyph}[^8]）
 
 接下来，我们将使用得到的对应关系将带乱码的文章转为正常文章。
 
@@ -139,13 +139,15 @@ new_content = raw_content.translate(str.maketrans(zhihu_dict))
 print(new_content)  # 中间那块奶酪夹心，是饼干被人喜爱的灵魂。
 ```
 
-上面字体文件名记得换成你自己下载的字体文件名
+{% note warning %}
+温馨提示：上面字体文件名记得换成你自己下载的字体文件名
+{% endnote %}
 
 ## 结语
 
-在本文的带领下，我们粗略地了解了知乎所使用的反爬技术，分析了其使用的反爬字体，找出了原字与新字的对应关系，最终将带乱码的文章转为了正常文章。其中，知乎使用的反爬字体没有去掉 Unicode 与 Glyph 的对应关系，虽然这使我们更轻松地得到了对应关系，但是对于知乎而言，这种错误无疑是致命的，因此，在字体反爬的实际运用中，我们更需要避免这种错误。[^8]
+在本文的带领下，我们粗略地了解了知乎所使用的反爬技术，分析了其使用的反爬字体，找出了原字与新字的对应关系，最终将带乱码的文章转为了正常文章。其中，知乎使用的反爬字体没有去掉 Unicode 与 Glyph 的对应关系，虽然这使我们更轻松地得到了对应关系，但是对于知乎而言，这种错误无疑是致命的，因此，在字体反爬的实际运用中，我们更需要避免这种错误。[^9]
 
-知乎也在该反爬系统部署到回答页不久以后升级了其专栏反爬系统，本文所介绍的致命缺陷已被修复[^9]，而解码新反爬系统的内容，就留到本系列的下篇吧。
+知乎也在该反爬系统部署到回答页不久以后升级了其专栏反爬系统，本文所介绍的致命缺陷已被修复[^10]，而解码新反爬系统的内容，就留到本系列的下篇吧。
 
 （敬请期待）
 
@@ -162,14 +164,16 @@ print(new_content)  # 中间那块奶酪夹心，是饼干被人喜爱的灵魂�
 
 [^3]: .ttf 是因为 `data:font/ttf;...` 代表该字体是 ttf 格式的。
 
-[^4]: fontTools文档：[fontTools Docs — fontTools Documentation](https://fonttools.readthedocs.io/en/latest/)
+[^4]: 基于笔画比对的反爬破解见该文章：[字体反爬之汽车之家_51CTO博客_汽车之家字体反爬](https://blog.51cto.com/u_15289428/2992542)（话说这篇文章和下面注10是一个网站吧）
 
-[^5]: 康熙部首相关文章：[康熙部首导致的字典查询异常](https://mp.weixin.qq.com/s?src=11&timestamp=1688488134&ver=4630&signature=JXLh7up18JREGzu-hyDHNVu4-yW-RQnmOFTegveHvhlbDBrcwfMRe9c0b15eJPVo5VFZ-BkntaZvQ1EOGDIdWZ4*dM*9NMTwroaqkGu17aagpE6SDr8v2FgsrmKGus4Z&new=1)
+[^5]: fontTools文档：[fontTools Docs — fontTools Documentation](https://fonttools.readthedocs.io/en/latest/)
 
-[^6]: 标准化相关文章：[化异为同，Python 在背后帮你做的转换](https://mp.weixin.qq.com/s?src=11&timestamp=1688488134&ver=4630&signature=JXLh7up18JREGzu-hyDHNVu4-yW-RQnmOFTegveHvhnpJwhWtfcrbfZyZ0LrFFbzVDaXDT2onRWaIWo*r2Sv9Tg*ZBiuWotp9WQdbrawvxGLj0T5U-xC2fnssc4lEsLl&new=1#:~:text=%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%EF%BC%8C%E6%89%8B%E5%86%99%E5%AD%97%E7%AC%A6%F0%9D%91%93%E9%80%9A%E8%BF%87%20NFKC%20%E6%A0%87%E5%87%86%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%99%AE%E9%80%9A%E7%9A%84%E5%AD%97%E6%AF%8Df%EF%BC%8C%E6%89%80%E4%BB%A5%E5%9C%A8%20Python%20%E9%87%8C%E9%9D%A2%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%BD%9C%E4%B8%BA%E5%8F%98%E9%87%8F%E5%90%8D%EF%BC%8C%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84%E3%80%82)
+[^6]: 康熙部首相关文章：[康熙部首导致的字典查询异常](https://mp.weixin.qq.com/s?src=11&timestamp=1688488134&ver=4630&signature=JXLh7up18JREGzu-hyDHNVu4-yW-RQnmOFTegveHvhlbDBrcwfMRe9c0b15eJPVo5VFZ-BkntaZvQ1EOGDIdWZ4*dM*9NMTwroaqkGu17aagpE6SDr8v2FgsrmKGus4Z&new=1)
 
-[^7]: 其中 Unicode 为 int 而 Glyph 为形如 uni4E0D 的 str
+[^7]: 标准化相关文章：[化异为同，Python 在背后帮你做的转换](https://mp.weixin.qq.com/s?src=11&timestamp=1688488134&ver=4630&signature=JXLh7up18JREGzu-hyDHNVu4-yW-RQnmOFTegveHvhnpJwhWtfcrbfZyZ0LrFFbzVDaXDT2onRWaIWo*r2Sv9Tg*ZBiuWotp9WQdbrawvxGLj0T5U-xC2fnssc4lEsLl&new=1#:~:text=%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%EF%BC%8C%E6%89%8B%E5%86%99%E5%AD%97%E7%AC%A6%F0%9D%91%93%E9%80%9A%E8%BF%87%20NFKC%20%E6%A0%87%E5%87%86%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%99%AE%E9%80%9A%E7%9A%84%E5%AD%97%E6%AF%8Df%EF%BC%8C%E6%89%80%E4%BB%A5%E5%9C%A8%20Python%20%E9%87%8C%E9%9D%A2%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%BD%9C%E4%B8%BA%E5%8F%98%E9%87%8F%E5%90%8D%EF%BC%8C%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84%E3%80%82)
 
-[^8]: 关于如何创造更坚固的字体反爬系统，可以参考这篇文章：[反爬终极方案总结—字体反爬 - 知乎](https://zhuanlan.zhihu.com/p/37838586)（值得一提的是这篇文章就被发表在在知乎上2333）
+[^8]: 其中 Unicode 为 int 而 Glyph 为形如 uni4E0D 的 str
 
-[^9]: 值得表扬( •̀ ω •́ )y
+[^9]: 关于如何创造更坚固的字体反爬系统，可以参考这篇文章：[反爬终极方案总结—字体反爬 - 知乎](https://zhuanlan.zhihu.com/p/37838586)（值得一提的是这篇文章就被发表在在知乎上2333）
+
+[^10]: 值得表扬( •̀ ω •́ )y
