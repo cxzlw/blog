@@ -1,7 +1,7 @@
 ---
 title: 《飞石》Pt.1 未掷出的石子
 date: 2023-07-05 22:20:06
-license: ""
+license: "BY-NC-SA"
 author: 路过的某个学渣
 tags:
  - 飞石
