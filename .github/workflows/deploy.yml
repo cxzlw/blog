@@ -34,6 +34,7 @@ jobs:
           git config --global user.name "cxzlw"
           npm install hexo-cli -g
           npm install hexo-deployer-git --save
+          npm install hexo-seo --save
           npm install
 
       - name: Deploy
