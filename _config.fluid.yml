@@ -994,6 +994,12 @@ links:
       link: "https://cdycc.cn/",
       avatar: "https://github-production-user-asset-6210df.s3.amazonaws.com/55052188/251199962-860d1ee3-6d26-47b2-a3d8-3448c305a9d0.png"
     }
+    - {
+      title: "XXYの博客",
+      intro: "爱折腾，爱分享",
+      link: "https://blog.xuxiny.top",
+      avatar: "http://q2.qlogo.cn/headimg_dl?dst_uin=3429924750&spec=5"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
