@@ -1,15 +1,16 @@
 ---
 title: Zerotier 自定义 Planet 后与标准节点互通
 date: 2023-07-06 12:37:41
-excerpt: "由于国内特殊的网络原因，Zerotier 官方提供的 Planet 用户体验不佳。为此，许多人选择自建私有 Moon，甚至私有 Planet 服务器。然而，正如官方文档所说，使用私有 Planet 服务器会使你的节点无法找到其他的标准节点。本文试图提出一种方案在使用私有 Planet 服务器的同时与标准节点通信。"
+excerpt: "由于国内特殊的网络原因，Zerotier 官方提供的 Planet 用户体验不佳。为此，不少人选择自建私有 Moon，甚至私有 Planet 服务器。然而，正如官方文档所说，使用私有 Planet 服务器会使你的节点无法找到其他的标准节点。本文试图提出一种方案在使用私有 Planet 服务器的同时与标准节点通信。"
 tags: 
  - Zerotier
  - 自建Planet
  - cxzlw
 license: "BY"
+author: "cxzlw"
 ---
 
-由于国内特殊的网络原因，Zerotier 官方提供的 Planet 用户体验不佳。为此，许多人选择自建私有 Moon，甚至私有 Planet 服务器。然而，正如[官方文档所说](https://docs.zerotier.com/self-hosting/introduction#:~:text=If%20you%20are%20using%20a%20custom%20root%20setup%2C%20your%20nodes%20won%27t%20be%20able%20to%20find%20standard%20nodes.)[^1]，使用私有 Planet 服务器会使你的节点无法找到其他的标准节点。本文试图提出一种方案在使用私有 Planet 服务器的同时与标准节点通信。
+由于国内特殊的网络原因[^1]，Zerotier 官方提供的 Planet 用户体验不佳。为此，不少人选择自建私有 Moon，甚至私有 Planet 服务器。然而，正如[官方文档所说](https://docs.zerotier.com/self-hosting/introduction#:~:text=If%20you%20are%20using%20a%20custom%20root%20setup%2C%20your%20nodes%20won%27t%20be%20able%20to%20find%20standard%20nodes.)[^2]，使用私有 Planet 服务器会使你的节点无法找到其他的标准节点。本文试图提出一种方案在使用私有 Planet 服务器的同时与标准节点通信。
 
 ## 一、生成 moon.json
 
@@ -135,7 +136,7 @@ zerotier-idtool genmoon .\moon.json
 
 ## 五、使用 .moon 文件
 
-在 Zerotier 目录[^2]下新建文件夹 moons.d。
+在 Zerotier 目录[^3]下新建文件夹 moons.d。
 
 把生成的 xxxxxxxxxxxxxxxx.moon 放到你的 moons.d文件夹。
 
@@ -149,6 +150,8 @@ zerotier-idtool genmoon .\moon.json
 
 ## 注
 
-[^1]: [If you are using a custom root setup, your nodes won't be able to find standard nodes. ](https://docs.zerotier.com/self-hosting/introduction#:~:text=If%20you%20are%20using%20a%20custom%20root%20setup%2C%20your%20nodes%20won%27t%20be%20able%20to%20find%20standard%20nodes.)如果你使用自定义根配置，你的节点将无法找到其他标准节点。
+[^1]: 不作评价
 
-[^2]: Linux 是 `/var/lib/zerotier-one`，Windows 是 `C:\ProgramData\ZeroTier\One\`，别的不知道。
+[^2]: [If you are using a custom root setup, your nodes won't be able to find standard nodes. ](https://docs.zerotier.com/self-hosting/introduction#:~:text=If%20you%20are%20using%20a%20custom%20root%20setup%2C%20your%20nodes%20won%27t%20be%20able%20to%20find%20standard%20nodes.)如果你使用自定义根配置，你的节点将无法找到其他标准节点。
+
+[^3]: Linux 是 `/var/lib/zerotier-one`，Windows 是 `C:\ProgramData\ZeroTier\One\`，别的不知道。
