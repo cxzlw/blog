@@ -1,5 +1,5 @@
 ---
-title: 《飞石》Pt.1 未掷出的石子
+title: 《飞石》Pt.1 未掷出的石子 第一章：不存在的历史
 date: 2023-07-05 22:20:06
 license: "BY-NC-SA"
 author: 路过的某个学渣
