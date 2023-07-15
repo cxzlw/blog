@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/cxzlw
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://blog.cxzlw.top
+  * I am cxzlw (https://keybase.io/cxzlw) on keybase.
+  * I have a public key ASDsJ8xHdDgpabzPSdAbBvAI1UjmiBroICa-xv9Oqq1qqwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120ec27cc4774382969bccf49d01b06f008d548e6881ae82026bec6ff4eaaad6aab0a",
+      "host": "keybase.io",
+      "kid": "0120ec27cc4774382969bccf49d01b06f008d548e6881ae82026bec6ff4eaaad6aab0a",
+      "uid": "933030c12d79b42d7344f89c98634119",
+      "username": "cxzlw"
+    },
+    "merkle_root": {
+      "ctime": 1689403445,
+      "hash": "cfeb19c8f72645b8663361678e507080f47c989609f48e5167253c629398565be10a1e6f54f30f615c200f26105b48b4836a63b491d1d2e2a9aa4cd8c2b8794f",
+      "hash_meta": "86b48628f9d05806ea42a02208c28307a91d3b4d36bac0cc69d130f26f062c53",
+      "seqno": 24688234
+    },
+    "service": {
+      "entropy": "TEiSGkH9ZON5hdPVnL5C7ZXb",
+      "hostname": "blog.cxzlw.top",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.1"
+  },
+  "ctime": 1689403507,
+  "expire_in": 504576000,
+  "prev": "2426cb0c9e930372939bb21e5d00f52124ed486dcf18e8f8f9414bbf3b52f2c1",
+  "seqno": 13,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg7CfMR3Q4KWm8z0nQGwbwCNVI5oga6CAmvsb/TqqtaqsKp3BheWxvYWTESpcCDcQgJCbLDJ6TA3KTm7IeXQD1ISTtSG3PGOj4+UFLvztS8sHEIEw2+MArin268uCWIVlzVl1BS3zVyrbJeX85imjl7Eh8AgHCo3NpZ8RAEbZ4HVtVmt109OJbi1MfY24nvMuliqQrHQEN1bIvURRzi1KKWMPwlj7tVJfOusyTM1xVVi8gWmYFm5pGE1hHCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIDMaccroY3VB7kyrpTH4IfjrIJ9gYWIQmdulb38d+L9Uo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/cxzlw
+
+==================================================================
