@@ -7,6 +7,14 @@ title: 创新者.老王的博客
 subtitle: ''
 description: ''
 keywords:
+  - "创新者老王"
+  - "创新者.老王"
+  - "博客"
+  - "技术博客"
+  - "老王"
+  - "创新者"
+  - "Earthno1"
+  - "FatalError"
 author: cxzlw
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -107,6 +115,10 @@ deploy:
   # repo: https://github.com/cxzlw/cxzlw.github.io.git
   repo: git@github.com:cxzlw/cxzlw.github.io.git
   branch: master
+
+markdown:
+  plugins:
+    - "@traptitech/markdown-it-katex"
 
 sitemap: 
   path: sitemap.xml
