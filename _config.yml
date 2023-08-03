@@ -116,9 +116,5 @@ deploy:
   repo: git@github.com:cxzlw/cxzlw.github.io.git
   branch: master
 
-markdown:
-  plugins:
-    - "@traptitech/markdown-it-katex"
-
 sitemap: 
   path: sitemap.xml
