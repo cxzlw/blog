@@ -8,9 +8,9 @@ module.exports = {
       {
         urlPattern: /^https:\/\/at\.alicdn\.com\/.*/,
         handler: "CacheFirst"
-      }, 
+      },  
       {
-        urlPattern: /^https:\/\/blog\.cxzlw\.top\/manifest\.json/, 
+        urlPattern: /^https:\/\/blog\.cxzlw\.top\/.*/, 
         handler: "NetworkFirst"
       }
     ]
