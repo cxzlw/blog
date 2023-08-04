@@ -2,6 +2,7 @@
 title: 分享一个权限系统的设计
 date: 2023-08-04 15:32:59
 license: BY-SA
+excerpt: 最近在参与某 OJ 的开发，过程中我们需要一个权限系统。作为一个热爱 MC 的开发者，我很喜欢 luckperms 的设计，于是这个小东西就出来了。在这里给大家分享我们的权限系统设计。
 tags:
 ---
 
@@ -169,34 +170,6 @@ class PermissionNode(db.Entity):
     permission = Required(str)
     value = Required(bool)
     owner = Required(PermissionGroup)
-
-    @classmethod
-    @db_session
-    def instance(cls, permission, value=None, owner=None):
-        """
-        Return an PermissionNode instance.
-
-        If a PermissionNode with the permission exists, it will directly return the
-            node, with new weight and owner value. It is noticeable that, if value
-            or owner are not given, it won't be changed.
-
-        Or, it will create a new PermissionNode with the given permission, value, and
-            owner value. Notice that if the weight or owner are not given here, an
-            ValueError will be thrown.
-
-        """
-        result = cls.get(permission=permission)
-        if result is None:
-            if value is None:
-                raise ValueError
-            if owner is None:
-                raise ValueError
-            return cls(permission=permission, value=value, owner=owner)
-        if value is not None:
-            result.value = value
-        if owner is not None:
-            result.owner = owner
-        return result
 
 ```
 
