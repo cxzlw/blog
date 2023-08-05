@@ -6,11 +6,11 @@ module.exports = {
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/lib\.baomitu\.com\/.*/,
-        handler: "CacheFirst"
+        handler: "StaleWhileRevalidate"
       },
       {
         urlPattern: /^https:\/\/at\.alicdn\.com\/.*/,
-        handler: "CacheFirst"
+        handler: "StaleWhileRevalidate"
       },
       {
         urlPattern: /^https:\/\/blog\.cxzlw\.top\/.*/, 
