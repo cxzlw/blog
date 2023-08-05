@@ -31,6 +31,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '18'
+          cache: 'pnpm'
 
       - name: Get pnpm store directory
         shell: bash
