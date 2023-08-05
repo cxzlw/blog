@@ -22,16 +22,16 @@ jobs:
           # Desired timezone for Linux
           timezoneLinux: "Asia/Shanghai"
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+      # - name: Setup pnpm
+      #   uses: pnpm/action-setup@v2
+      #   with:
+      #     version: 8
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          # cache: 'pnpm'
+          cache: 'npm'
 
       # - name: Get pnpm store directory
       #   shell: bash
@@ -57,8 +57,8 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "wsc_zds@qq.com"
           git config --global user.name "cxzlw"
-          pnpm install hexo-cli -g
-          pnpm install
+          npm install hexo-cli -g
+          npm install
 
       - name: Deploy
         run: |
