@@ -1,5 +1,9 @@
 $(
     () => {
-        NProgress.done(); 
+        setTimeout(
+            () => {
+                NProgress.done(); 
+            }, 100
+            ); 
     }
 ); 
