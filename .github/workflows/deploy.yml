@@ -58,11 +58,11 @@ jobs:
           git config --global user.email "wsc_zds@qq.com"
           git config --global user.name "cxzlw"
           pnpm install
-          pnpm install hexo-cli -g
+          pnpm install hexo-cli
 
       - name: Deploy
         run: |
           git clone https://github.com/cxzlw/cxzlw.github.io.git .deploy_git
-          hexo clean
-          hexo generate
-          hexo deploy
+          pnpm hexo clean
+          pnpm hexo generate
+          pnpm hexo deploy
