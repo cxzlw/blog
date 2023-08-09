@@ -4,7 +4,7 @@ date: 2023-07-06 12:37:41
 excerpt: "由于国内特殊的网络原因，Zerotier 官方提供的 Planet 用户体验不佳。为此，不少人选择自建私有 Moon，甚至私有 Planet 服务器。然而，正如官方文档所说，使用私有 Planet 服务器会使你的节点无法找到其他的标准节点。本文试图提出一种方案在使用私有 Planet 服务器的同时与标准节点通信。"
 tags: 
  - Zerotier
- - 自建Planet
+ - 自建 Planet
  - cxzlw
 license: "BY"
 author: "cxzlw"
