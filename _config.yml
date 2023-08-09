@@ -38,6 +38,9 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - baidu_verify_codeva-0rhRRODu4H.html
+  - keybase.txt
+  - robots.txt
+  - b2a09667745e494db48ac5b915a14789.txt
 
 # Writing
 new_post_name: :title.md # File name of new posts
