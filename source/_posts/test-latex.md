@@ -8,9 +8,5 @@ math: true
 $$
 E=mc^2
 $$
-$$
-E=mc^2
-$$
-$$
-E=mc^2
-$$
+
+how to

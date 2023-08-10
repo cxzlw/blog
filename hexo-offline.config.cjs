@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         urlPattern: /^https:\/\/blog\.cxzlw\.top\/.*/, 
-        handler: "StaleWhileRevalidate"
+        handler: "NetworkFirst"
       }
     ], 
     skipWaiting: true, 
