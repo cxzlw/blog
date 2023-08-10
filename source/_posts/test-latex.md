@@ -5,7 +5,7 @@ tags:
 math: true
 ---
 
-upd test
+test!
 
 $$
 E=mc^2
