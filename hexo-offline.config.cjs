@@ -17,6 +17,6 @@ module.exports = {
         handler: "StaleWhileRevalidate"
       }
     ], 
-    skipWating: true, 
+    skipWaiting: true, 
     clientsClaim: true
 }
