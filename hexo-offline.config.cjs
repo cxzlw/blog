@@ -13,6 +13,10 @@ module.exports = {
         handler: "StaleWhileRevalidate"
       },
       {
+        urlPattern: /^https:\/\/blog\.cxzlw\.top\/service-worker\.js$/,
+        handler: "NetworkOnly"
+      }, 
+      {
         urlPattern: /^https:\/\/blog\.cxzlw\.top\/.*/, 
         handler: "NetworkFirst"
       }
