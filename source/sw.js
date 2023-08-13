@@ -13,6 +13,8 @@ const staleWhileRevalidate = new StaleWhileRevalidate();
 registerRoute(/^https:\/\/lib\.baomitu\.com\/.*/, staleWhileRevalidate, "GET"); 
 registerRoute(/^https:\/\/at\.alicdn\.com\/.*/, staleWhileRevalidate, "GET"); 
 registerRoute(/^https:\/\/blog\.cxzlw\.top\/.*/, staleWhileRevalidate, "GET"); 
+registerRoute(/^https:\/\/v1\.hitokoto\.cn\/.*/, staleWhileRevalidate, "GET"); 
+registerRoute(/^http:\/\/localhost:8000\/.*/, staleWhileRevalidate, "GET"); 
 
 const urls = self.__WB_MANIFEST.map(element => element["url"]);
 
