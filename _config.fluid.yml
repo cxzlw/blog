@@ -240,6 +240,7 @@ custom_css:
 
 custom_head: '
 <link rel="manifest" href="/manifest.json">
+<script type="module">import {Workbox} from "https://registry.npmmirror.com/workbox-window/7.0.0/files/build/workbox-window.prod.mjs";if ("serviceWorker" in navigator){const wb=new Workbox("/sw.js");wb.register();}</script>
 '
 
 # 网页访问统计

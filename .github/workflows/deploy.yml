@@ -65,4 +65,5 @@ jobs:
           git clone https://github.com/cxzlw/cxzlw.github.io.git .deploy_git
           hexo clean
           hexo generate
+          pnpm workbox injectManifest workbox-config.js
           hexo deploy
