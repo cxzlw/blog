@@ -4,6 +4,8 @@ date: 2023-08-22 21:37:05
 tags:
 ---
 
+在这整理一下
+
 | ECA | time | want | chosen | notes |
 |-|-|-|-|-|
 | Minecraft Technology | 周一 中午 | YES | | Maybe No Attendance? |
