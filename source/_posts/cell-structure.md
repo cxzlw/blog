@@ -6,9 +6,7 @@ author: cxzlw (Thomas Wang)
 mermaid: true
 ---
 
-Not avaliable
-
-<!-- # Cell structure
+# Cell structure
 
 ## Mind map
 
@@ -208,4 +206,4 @@ Small circles of DNA.
 This page was rendered by my blog locally, for a beautiful and well-layouted result, so there are things related to my
 blog. These things don't mean it was downloaded from someone's blog. Of course, this page won't be avaliable to the
 public before the assessment is no longer accepting submissions.
-{% endnote %} -->
+{% endnote %}
