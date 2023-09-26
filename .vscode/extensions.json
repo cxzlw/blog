@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "bierner.markdown-mermaid",
+        "skn0tt.markdown-link-expander",
+        "goessner.mdmath"
+    ]
+}

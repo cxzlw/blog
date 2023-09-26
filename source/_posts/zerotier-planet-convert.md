@@ -10,7 +10,7 @@ license: "BY"
 author: "cxzlw"
 ---
 
-由于国内特殊的网络原因[^1]，Zerotier 官方提供的 Planet 用户体验不佳。为此，不少人选择自建私有 Moon，甚至私有 Planet 服务器。然而，正如[官方文档所说](https://docs.zerotier.com/self-hosting/introduction#:~:text=If%20you%20are%20using%20a%20custom%20root%20setup%2C%20your%20nodes%20won%27t%20be%20able%20to%20find%20standard%20nodes.)[^2]，使用私有 Planet 服务器会使你的节点无法找到其他的标准节点。本文试图提出一种方案在使用私有 Planet 服务器的同时与标准节点通信。
+由于国内特殊的网络原因[^1]，Zerotier 官方提供的 Planet 用户体验不佳。为此，不少人选择自建私有 Moon，甚至私有 Planet 服务器。然而，正如官方文档[^2]所说，使用私有 Planet 服务器会使你的节点无法找到其他的标准节点。本文试图提出一种方案在使用私有 Planet 服务器的同时与标准节点通信。
 
 ## 一、生成 moon.json
 
@@ -152,6 +152,6 @@ zerotier-idtool genmoon .\moon.json
 
 [^1]: 不作评价
 
-[^2]: [If you are using a custom root setup, your nodes won't be able to find standard nodes. ](https://docs.zerotier.com/self-hosting/introduction#:~:text=If%20you%20are%20using%20a%20custom%20root%20setup%2C%20your%20nodes%20won%27t%20be%20able%20to%20find%20standard%20nodes.)如果你使用自定义根配置，你的节点将无法找到其他标准节点。
+[^2]: [Introduction | ZeroTier Documentation](https://docs.zerotier.com/self-hosting/introduction#:~:text=If%20you%20are%20using%20a%20custom%20root%20setup%2C%20your%20nodes%20won%27t%20be%20able%20to%20find%20standard%20nodes.)如果你使用自定义根配置，你的节点将无法找到其他标准节点。
 
-[^3]: Linux 是 `/var/lib/zerotier-one`，Windows 是 `C:\ProgramData\ZeroTier\One\`，别的不知道。
+[^3]: Linux 是 `/var/lib/zerotier-one`，Windows 是 `C:\ProgramData\ZeroTier\One\`。
