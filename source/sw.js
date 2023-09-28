@@ -20,8 +20,10 @@ registerRoute(/^http:\/\/localhost:8000\/.*\.html/, networkFirst, "GET");
 // registerRoute(/^http:\/\/localhost:8000\/.*/, staleWhileRevalidate, "GET"); 
 
 const urls = self.__WB_MANIFEST.map(element => element["url"]);
+const index_urls = urls.filter(url => url.endsWith("index.html")).map(url => url.substring(0, url.length - 10)); 
 
 warmStrategyCache({urls:urls, strategy:staleWhileRevalidate}); 
+warmStrategyCache({urls:index_urls, strategy:staleWhileRevalidate}); 
 
 skipWaiting()
 clientsClaim()

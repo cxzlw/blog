@@ -131,7 +131,7 @@ cafe04eba9:0:6c6a9d1dea55c1616bfe2a2b8f0ff9a8cacaf70374fb1f39e3bef81cbfebef17b72
 ## 四、生成 .moon 文件
 
 ```bash
-zerotier-idtool genmoon .\moon.json
+zerotier-idtool genmoon moon.json
 ```
 
 ## 五、使用 .moon 文件
@@ -142,7 +142,7 @@ zerotier-idtool genmoon .\moon.json
 
 重启 Zerotier 服务（不会重启的建议重启电脑）。
 
-这样就好了，你可以开始享用你的自定义 Planet 带来的低延迟体验和官方 Planet 上大量的节点了
+这样就好了，你可以开始享用你的自定义 Planet 带来的低延迟体验和官方 Planet 上大量的节点了。
 
 ## 结语
 
