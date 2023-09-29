@@ -1,7 +1,7 @@
 module.exports = {
 	globDirectory: 'public/',
 	globPatterns: [
-		'**/*.{css,ico,png,gif,js,html}'
+		'**/*.{css,ico,jpg,png,gif,js,xml,html}'
 	],
 	globIgnores: [
 		'icons/*'
