@@ -4,6 +4,7 @@ date: 2023-08-31 23:11:29
 tags:
 author: cxzlw (Thomas Wang)
 mermaid: true
+lang: en
 ---
 
 # Cell structure
