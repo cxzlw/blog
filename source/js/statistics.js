@@ -1,13 +1,14 @@
 async function main() {
     let resp = await fetch("https://blog-api.cxzlw.top/count", {
-        method: "POST", // or 'PUT'
+        method: "POST", 
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(
             {
                 "page_url": window.location.href
-            }),
+            }
+        ),
     });
     
     let result = await resp.json(); 
@@ -39,4 +40,37 @@ async function main() {
     }
 }
 
+async function article_views(element) {
+    let url = element.children[0].children[0].href; 
+    let post_metas = element.children[2]; 
+    
+    let resp = await fetch("https://blog-api.cxzlw.top/count?" + new URLSearchParams({page_url: url, t: new Date()}), {
+        method: "GET", 
+        cache: "no-cache"
+    });
+
+    let result = await resp.json(); 
+    console.log(result); 
+    
+    let count = result.page_pv; 
+
+    let node = document.createElement("div"); 
+    post_metas.appendChild(node); 
+    node.outerHTML = `
+    <div class="post-meta ml-3">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span>${count}</span>
+    </div>`; 
+}
+
+async function index_article_views() {
+    let articles = document.getElementsByClassName("index-info"); 
+    for (const element of articles) {
+        article_views(element)
+    }
+}
+
 main(); 
+if (window.location.pathname === "/") {
+    index_article_views(); 
+}
