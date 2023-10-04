@@ -202,9 +202,3 @@ Small circles of DNA.
 
 1. A plant cell has nucleus, and a prokaryotic cell has nucleoid and plasmid instead.
 2. Cell wall in a plant cell is made of cellulose but peptidoglycan in a prokaryotic cell.
-
-{% note info %}
-This page was rendered by my blog locally, for a beautiful and well-layouted result, so there are things related to my
-blog. These things don't mean it was downloaded from someone's blog. Of course, this page won't be avaliable to the
-public before the assessment is no longer accepting submissions.
-{% endnote %}
