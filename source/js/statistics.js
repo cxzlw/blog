@@ -44,6 +44,9 @@ async function article_views(element) {
     let url = element.children[0].children[0].href; 
     let post_metas = element.children[2]; 
     
+    let tags = post_metas.children[1]; 
+    if (tags) tags.classList.add("mr-3"); 
+
     let resp = await fetch("https://blog-api.cxzlw.top/count?" + new URLSearchParams({page_url: url, t: new Date()}), {
         method: "GET", 
         cache: "no-cache"
@@ -57,7 +60,7 @@ async function article_views(element) {
     let node = document.createElement("div"); 
     post_metas.appendChild(node); 
     node.outerHTML = `
-    <div class="post-meta ml-3">
+    <div class="post-meta">
         <i class="iconfont icon-eye" aria-hidden="true"></i>
         <span>${count}</span>
     </div>`; 
