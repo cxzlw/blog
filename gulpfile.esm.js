@@ -17,4 +17,4 @@ function build_avif() {
         .pipe(dest("public/img/")); 
 }
 
-export default parallel(build_webp, build_avif); 
+export default parallel(build_webp); 
