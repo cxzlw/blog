@@ -66,4 +66,5 @@ jobs:
           hexo clean
           hexo generate
           pnpm workbox injectManifest workbox-config.js
+          pnpm gulp
           hexo deploy
