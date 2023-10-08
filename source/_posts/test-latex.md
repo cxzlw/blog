@@ -9,8 +9,6 @@ $$
 E=mc^2
 $$
 
-WORK? 
-
 Hi, GitHub, from China. 
 
 Hi my blog, from github.dev
