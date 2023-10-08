@@ -1,0 +1,1 @@
+ping @ git+https://github.com/cxzlw/ping.git@bcf74f3bcebd0d7b750c6d203bfc1d7247ba8c18
