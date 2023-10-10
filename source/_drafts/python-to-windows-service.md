@@ -6,14 +6,11 @@ tags:
   - Nuitka
   - Python
   - cxzlw
-excerpt: 今天想把一个 Python 项目用 Nuitka 打包后设为开机自启。突然发现 Nuitka Commercial 可以把 Python 项目打包为 Windows service， 然而要钱（这周生活费够不够我吃的都是个问题……）。当然人家也给出了 win32service 这个东西，那自然要看看。
+excerpt: 今天想把一个 Python 项目用 Nuitka 打包后设为开机自启。突然发现 Nuitka Commercial 可以把 Python 项目打包为 Windows service， 然而要钱。当然人家也给出了 win32service 这个东西，那自然要看看。
 ---
 
-今天想把一个 Python 项目用 Nuitka 打包后设为开机自启。突然发现 Nuitka Commercial 可以把 Python 项目打包为 Windows service， 然而要钱（这周生活费够不够我吃的都是个问题……）。当然人家也给出了 `win32service` 这个东西，那自然要看看。
+今天想把一个 Python 项目用 Nuitka 打包后设为开机自启。突然发现 Nuitka Commercial 可以把 Python 项目打包为 Windows service， 然而要钱。当然人家也给出了 `win32service` 这个东西，那自然要看看。
 
-{% note warning %}
-前排提醒，我还没解决没网络权限的问题 :(
-{% endnote %}
 
 ## 一、安装
 
@@ -119,11 +116,3 @@ windows_service_entry.exe start
 ```batch
 windows_service_entry.exe stop
 ```
-
-## 四、限制
-
-需要注意的是，这样跑起来的 service 并没有权限访问网络。这个问题到现在我也没解决，~~可以期待一下接下来的一篇文章~~（也失败了，就不发了 :( ）。
-
-唉，要说运行一个 Web server 肯定是失败了。但是作为一个 Windows service，还是可以跑的……
-
-同时，如果有相应的解决方案的，欢迎告诉我，谢谢。
