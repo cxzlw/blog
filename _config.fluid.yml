@@ -237,18 +237,20 @@ custom_js:
 # The usage is the same as custom_js
 custom_css:
 
-custom_head: '
+custom_head: 
+ - '
 <link rel="manifest" href="/manifest.json">
 <script async type="module">import {Workbox} from "https://registry.npmmirror.com/workbox-window/7.0.0/files/build/workbox-window.prod.mjs";if ("serviceWorker" in navigator){const wb=new Workbox("/sw.js");wb.register();}</script>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6J7RRJV4HH"></script>
+'
+ - "
+<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-6J7RRJV4HH\"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag(\'js\', new Date());
-  gtag(\'config\', \'G-6J7RRJV4HH\');
-</script>
-'
+  gtag('js', new Date());
+  gtag('config', 'G-6J7RRJV4HH');
+</script>"
 
 # 网页访问统计
 # Analysis of website visitors
