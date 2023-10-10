@@ -23,7 +23,7 @@ const urls = self.__WB_MANIFEST.map(element => element["url"]);
 const index_urls = urls.filter(url => url.endsWith("index.html")).map(url => url.substring(0, url.length - 10)); 
 
 warmStrategyCache({urls:urls, strategy:staleWhileRevalidate}); 
-warmStrategyCache({urls:index_urls, strategy:staleWhileRevalidate}); 
+warmStrategyCache({urls:index_urls, strategy:networkFirst}); 
 
 skipWaiting()
 clientsClaim()
