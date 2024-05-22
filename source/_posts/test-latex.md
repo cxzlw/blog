@@ -16,3 +16,6 @@ Hi my blog, from github.dev
 Hi, wmr. 
 
 T. 
+
+Q: Who owns [SCIE Names](https://names.cxzlw.top/)? 
+A: Idk. 
