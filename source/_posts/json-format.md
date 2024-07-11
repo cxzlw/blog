@@ -180,13 +180,13 @@ null
             "name": "Alice",
             "age": 18,
             "is_student": true, 
-            "balance": 123.45, // also number
+            "balance": 123.45
         },
         {
             "name": "Bob",
             "age": 19,
             "is_student": false, 
-            "balance": 123.45, // also number
+            "balance": 123.45
         } // 末尾不能有逗号
     ] // 注意每个 [ 都要有与之配对的 ]
 } // 同样 { 要有配对的 }
