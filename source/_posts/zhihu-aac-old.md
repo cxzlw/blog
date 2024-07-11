@@ -159,7 +159,7 @@ print(new_content)  # 中间那块奶酪夹心，是饼干被人喜爱的灵魂�
 - [GitHub - cxzlw/zhihuDecrypt](https://github.com/cxzlw/zhihuDecrypt)
 - [GitHub - cxzlw/zhihuDecryptApp: The app to decrypt zhihu's encrypted (probably not) passages.](https://github.com/cxzlw/zhihuDecryptApp)
 
-## 注
+---
 
 [^1]: 专栏反爬现已更新，故本文只以回答反爬为演示。
 
@@ -167,7 +167,7 @@ print(new_content)  # 中间那块奶酪夹心，是饼干被人喜爱的灵魂�
 
 [^3]: .ttf 是因为 `data:font/ttf;...` 代表该字体是 ttf 格式的。
 
-[^4]: 基于笔画比对的反爬破解见该文章：[字体反爬之汽车之家_51CTO博客_汽车之家字体反爬](https://blog.51cto.com/u_15289428/2992542)（话说这篇文章和下面注10是一个网站吧）
+[^4]: 基于笔画比对的反爬破解见该文章：[字体反爬之汽车之家_51CTO博客_汽车之家字体反爬](https://blog.51cto.com/u_15289428/2992542)（话说这篇文章和下面注 9 是一个网站吧）
 
 [^5]: fontTools文档：[fontTools Docs — fontTools Documentation](https://fonttools.readthedocs.io/en/latest/)
 
@@ -175,8 +175,8 @@ print(new_content)  # 中间那块奶酪夹心，是饼干被人喜爱的灵魂�
 
 [^7]: 标准化相关文章：[化异为同，Python 在背后帮你做的转换](https://mp.weixin.qq.com/s?src=11&timestamp=1688488134&ver=4630&signature=JXLh7up18JREGzu-hyDHNVu4-yW-RQnmOFTegveHvhnpJwhWtfcrbfZyZ0LrFFbzVDaXDT2onRWaIWo*r2Sv9Tg*ZBiuWotp9WQdbrawvxGLj0T5U-xC2fnssc4lEsLl&new=1#:~:text=%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%EF%BC%8C%E6%89%8B%E5%86%99%E5%AD%97%E7%AC%A6%F0%9D%91%93%E9%80%9A%E8%BF%87%20NFKC%20%E6%A0%87%E5%87%86%E8%BD%AC%E6%8D%A2%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%99%AE%E9%80%9A%E7%9A%84%E5%AD%97%E6%AF%8Df%EF%BC%8C%E6%89%80%E4%BB%A5%E5%9C%A8%20Python%20%E9%87%8C%E9%9D%A2%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%BD%9C%E4%B8%BA%E5%8F%98%E9%87%8F%E5%90%8D%EF%BC%8C%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84%E3%80%82)
 
-[^8]: 其中 Unicode 为 int 而 Glyph 为形如 uni4E0D 的 str
+[^8]: 其中 Unicode 为 `int` 而 Glyph 为形如 uni4E0D 的 `str`
 
-[^9]: 关于如何创造更坚固的字体反爬系统，可以参考这篇文章：[反爬终极方案总结—字体反爬 - 知乎](https://zhuanlan.zhihu.com/p/37838586)（值得一提的是这篇文章就被发表在在知乎上2333）
+[^9]: 关于如何创造更坚固的字体反爬系统，可以参考这篇文章：[反爬终极方案总结—字体反爬 - 知乎](https://zhuanlan.zhihu.com/p/37838586)（值得一提的是这篇文章就被发表在在知乎上 2333）
 
-[^10]: 值得表扬( •̀ ω •́ )y
+[^10]: 值得表扬 ( •̀ ω •́ )y
