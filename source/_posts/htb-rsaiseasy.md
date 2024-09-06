@@ -151,7 +151,8 @@ $$
 即
 
 $$
-n2 = nE\ \%\ n1 + n1 \cdot k
+\def\mod{\text{ mod }}
+n2 = nE \mod n1 + n1 \cdot k
 $$
 
 其中 `k` 是未知的，你可以直接猜测 `k = 0` 即 `n2 = nE % n1`，但我还是想证明它。

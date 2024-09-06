@@ -6,6 +6,8 @@ excerpt: "最近，知乎上线了针对专栏中盐选文章的反爬系统，�
 tags: 
  - 知乎
  - 反爬
+ - 逆向
+ - 爬虫
  - Python
  - cxzlw
 license: "BY"
