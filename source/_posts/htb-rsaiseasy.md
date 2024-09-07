@@ -1,10 +1,12 @@
 ---
 title: RSAisEasy Writeup
+date: 2024-09-06 17:54:00
 tags:
 - HackTheBox
 - Crypto
 - Writeup
 - CTF
+- RSA
 - cxzlw
 math: true
 ---
