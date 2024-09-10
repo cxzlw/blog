@@ -1006,6 +1006,12 @@ links:
       link: "https://blog.xuxiny.top",
       avatar: "http://q2.qlogo.cn/headimg_dl?dst_uin=3429924750&spec=5"
     }
+    - {
+      title: "橙子", 
+      intro: "好妹妹 | Enjoy freedom | 前端写的真的超好看~", 
+      link: "https://orangestd.cn/", 
+      avatar: "https://orangestd.cn/images/avatar.png"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
