@@ -10,11 +10,11 @@ function build_webp() {
         .pipe(dest("public/img/")); 
 }
 
-function build_avif() {
-    return src('public/img/*')
-        .pipe(rename(path => path.basename += path.extname))
-        .pipe(gulpAvif())
-        .pipe(dest("public/img/")); 
-}
+// function build_avif() {
+//     return src('public/img/*')
+//         .pipe(rename(path => path.basename += path.extname))
+//         .pipe(gulpAvif())
+//         .pipe(dest("public/img/")); 
+// }
 
 export default parallel(build_webp); 
