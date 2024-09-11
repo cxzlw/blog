@@ -17,4 +17,6 @@ function build_webp() {
 //         .pipe(dest("public/img/")); 
 // }
 
-export default parallel(build_webp); 
+export default parallel(
+    build_webp
+); 
