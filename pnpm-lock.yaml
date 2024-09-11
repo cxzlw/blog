@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      esm:
-        specifier: ^3.2.25
-        version: 3.2.25
       gulp:
         specifier: ^5.0.0
         version: 5.0.0
@@ -1537,10 +1534,6 @@ packages:
     resolution: {integrity: sha512-2NlIDTwUWJN0mRPQOdtQBzbUHvdGY2P1VXSyU83Q3xKxM7WHX2Ql8dKq782Q9TgQUNOLEzEYu9bzLNj1q88I5w==}
     engines: {node: '>=6.0'}
     hasBin: true
-
-  esm@3.2.25:
-    resolution: {integrity: sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==}
-    engines: {node: '>=6'}
 
   esprima@4.0.1:
     resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
@@ -5593,8 +5586,6 @@ snapshots:
       esutils: 2.0.3
     optionalDependencies:
       source-map: 0.6.1
-
-  esm@3.2.25: {}
 
   esprima@4.0.1: {}
 

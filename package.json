@@ -12,7 +12,6 @@
     "version": "7.3.0"
   },
   "dependencies": {
-    "esm": "^3.2.25",
     "gulp": "^5.0.0",
     "gulp-avif": "^1.1.1",
     "gulp-cli": "^3.0.0",
