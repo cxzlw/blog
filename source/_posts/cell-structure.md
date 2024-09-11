@@ -5,6 +5,7 @@ tags:
 author: cxzlw (Thomas Wang)
 mermaid: true
 lang: en
+archive: true
 ---
 
 # Cell structure
