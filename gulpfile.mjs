@@ -1,7 +1,7 @@
 import {parallel, src, dest} from 'gulp'; 
-const webp = require('gulp-webp');
-const gulpAvif = require('gulp-avif');
-const rename = require('gulp-rename')
+import webp from 'gulp-webp';
+// import gulpAvif from 'gulp-avif';
+import rename from 'gulp-rename'; 
 
 function build_webp() {
     return src('public/img/*')
