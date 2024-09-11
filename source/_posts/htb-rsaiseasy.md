@@ -9,6 +9,7 @@ tags:
 - RSA
 - cxzlw
 math: true
+license: "BY-NC-SA"
 ---
 
 > 原题地址：[HackTheBox - RSAisEasy](https://app.hackthebox.com/challenges/RSAisEasy)
