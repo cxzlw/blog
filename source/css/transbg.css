@@ -1,3 +1,6 @@
 body {
     background: var(--body-bg-color);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 }
