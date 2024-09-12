@@ -139,7 +139,7 @@ color:
   # body 背景色
   # Color of body background
   # body_bg_color: "#eee"
-  body_bg_color: "linear-gradient(145deg, rgba(255,255,255,.6), rgba(0,0,0,0) 60%),linear-gradient(255deg, #5bcefaff, rgba(0,0,0,0) 60%),linear-gradient(15deg, #f59ab8ff, rgba(0,0,0,0) 120%);"
+  body_bg_color: "linear-gradient(145deg, rgba(255,255,255,.6), rgba(0,0,0,0) 60%),linear-gradient(255deg, #5bcefaff, rgba(0,0,0,0) 60%),linear-gradient(15deg, #f59ab8ff, rgba(0,0,0,0) 120%)"
   # 暗色模式下的 body 背景色，下同
   # Color in dark mode, the same below
   body_bg_color_dark: "#181c27"
