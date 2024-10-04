@@ -1059,25 +1059,25 @@ static_prefix:
 
   bootstrap: https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/
 
-  prismjs: https://lib.baomitu.com/prism/1.29.0/
+  prismjs: https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/
 
-  tocbot: https://lib.baomitu.com/tocbot/4.20.1/
+  tocbot: https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.29.0/
 
-  typed: https://lib.baomitu.com/typed.js/2.0.12/
+  typed: https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/
 
-  fancybox: https://lib.baomitu.com/fancybox/3.5.7/
+  fancybox: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/
 
-  nprogress: https://lib.baomitu.com/nprogress/0.2.0/
+  nprogress: https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/
 
-  mathjax: https://lib.baomitu.com/mathjax/3.2.2/
+  mathjax: https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/
 
-  katex: https://lib.baomitu.com/KaTeX/0.16.2/
+  katex: https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/
 
-  busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
+  busuanzi: https://cdnjs.cloudflare.com/ajax/libs/busuanzi/2.3.0/
+  
+  clipboard: https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/
 
-  clipboard: https://lib.baomitu.com/clipboard.js/2.0.11/
-
-  mermaid: https://lib.baomitu.com/mermaid/10.3.0/
+  mermaid: https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.2.0/
 
   valine: https://lib.baomitu.com/valine/1.5.1/
 
