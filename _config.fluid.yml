@@ -1008,6 +1008,12 @@ links:
       link: "https://yiurblog.top/", 
       avatar: "https://yiurblog.top/img/tubiao.png"
     }
+    - {
+      title: "N552AA", 
+      intro: "啥也没有|是可爱妹妹哦~", 
+      link: "https://n552aa.github.io/", 
+      avatar: "https://n552aa.github.io/img/favicon.png"
+    }
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
   onerror_avatar: /img/avatar.png
