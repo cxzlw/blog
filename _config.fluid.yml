@@ -1002,7 +1002,12 @@ links:
       link: "https://orangestd.cn/", 
       avatar: "https://orangestd.cn/images/avatar.png"
     }
-
+    - {
+      title: "洛忆雨 Yiur", 
+      intro: "一个平平无奇的 baka|是学 ctf 的姐姐哦~", 
+      link: "https://yiurblog.top/", 
+      avatar: "https://yiurblog.top/img/tubiao.png"
+    }
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
   onerror_avatar: /img/avatar.png
