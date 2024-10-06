@@ -1053,7 +1053,7 @@ static_prefix:
 
   anchor: https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/
 
-  github_markdown: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.6.1/
+  github_markdown: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/
 
   jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/
 
