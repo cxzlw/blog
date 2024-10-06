@@ -21,6 +21,7 @@ registerRoute(/^https:\/\/cdnjs\.cloudflare\.com\/.*/, cacheFirst, "GET");
 registerRoute(/^https:\/\/v1\.hitokoto\.cn\/.*/, staleWhileRevalidate, "GET"); 
 
 registerRoute(/^https:\/\/blog\.cxzlw\.top\/.*/, networkFirst, "GET"); 
+registerRoute(/^https:\/\/blog-api\.cxzlw\.top\/.*/, networkFirst, "GET"); 
 registerRoute(/^http:\/\/localhost:8000\/.*\.html/, networkFirst, "GET"); 
 // registerRoute(/^http:\/\/localhost:8000\/.*/, staleWhileRevalidate, "GET"); 
 
