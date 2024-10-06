@@ -1,20 +1,25 @@
 // import {precacheAndRoute} from 'workbox-precaching';
 
 importScripts(
-    'https://lib.baomitu.com/workbox-sw/7.0.0/workbox-sw.min.js'
+    'https://unpkg.com/workbox-sw@7.1.0/build/workbox-sw.js'
 );
 
-const {StaleWhileRevalidate, NetworkFirst} = workbox.strategies; 
+const {StaleWhileRevalidate, NetworkFirst, CacheFirst} = workbox.strategies; 
 const {registerRoute} = workbox.routing; 
 const {warmStrategyCache} = workbox.recipes;
 const {clientsClaim} = workbox.core;
 
 const staleWhileRevalidate = new StaleWhileRevalidate(); 
 const networkFirst = new NetworkFirst(); 
+const cacheFirst = new CacheFirst(); 
 
-registerRoute(/^https:\/\/lib\.baomitu\.com\/.*/, staleWhileRevalidate, "GET"); 
-registerRoute(/^https:\/\/at\.alicdn\.com\/.*/, staleWhileRevalidate, "GET"); 
+registerRoute(/^https:\/\/lib\.baomitu\.com\/.*/, cacheFirst, "GET"); 
+registerRoute(/^https:\/\/at\.alicdn\.com\/.*/, cacheFirst, "GET"); 
+registerRoute(/^https:\/\/unpkg\.com\/.*/, cacheFirst, "GET"); 
+registerRoute(/^https:\/\/cdnjs\.cloudflare\.com\/.*/, cacheFirst, "GET"); 
+
 registerRoute(/^https:\/\/v1\.hitokoto\.cn\/.*/, staleWhileRevalidate, "GET"); 
+
 registerRoute(/^https:\/\/blog\.cxzlw\.top\/.*/, networkFirst, "GET"); 
 registerRoute(/^http:\/\/localhost:8000\/.*\.html/, networkFirst, "GET"); 
 // registerRoute(/^http:\/\/localhost:8000\/.*/, staleWhileRevalidate, "GET"); 
