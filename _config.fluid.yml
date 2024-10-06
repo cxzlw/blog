@@ -1053,6 +1053,7 @@ static_prefix:
 
   anchor: https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/
 
+  # v5.0.0 破坏了 fluid 的样式
   github_markdown: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/
 
   jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/
