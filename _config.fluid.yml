@@ -242,7 +242,7 @@ custom_css:
 custom_head: 
  - '
 <link rel="manifest" href="/manifest.json">
-<script async type="module">import {Workbox} from "https://unpkg.com/workbox-window@7.1.0/build/workbox-window.prod.mjs"</script>
+<script async type="module">import {Workbox} from "https://unpkg.com/workbox-window@7.1.0/build/workbox-window.prod.mjs";if ("serviceWorker" in navigator){const wb=new Workbox("/sw.js");wb.register();}</script>
 '
 
 # 网页访问统计
