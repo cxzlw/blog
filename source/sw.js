@@ -16,7 +16,9 @@ const cacheFirst = new CacheFirst();
 registerRoute(/^https:\/\/lib\.baomitu\.com\/.*/, cacheFirst, "GET"); 
 registerRoute(/^https:\/\/at\.alicdn\.com\/.*/, cacheFirst, "GET"); 
 registerRoute(/^https:\/\/unpkg\.com\/.*/, cacheFirst, "GET"); 
-registerRoute(/^https:\/\/cdnjs\.cloudflare\.com\/.*/, cacheFirst, "GET"); 
+
+// cdnjs 由于不透明响应需要使用 staleWhileRevalidate
+registerRoute(/^https:\/\/cdnjs\.cloudflare\.com\/.*/, staleWhileRevalidate, "GET"); 
 
 registerRoute(/^https:\/\/v1\.hitokoto\.cn\/.*/, staleWhileRevalidate, "GET"); 
 
