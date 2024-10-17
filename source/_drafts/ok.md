@@ -5,14 +5,14 @@ tags:
 tikzjax: true
 ---
 
+miao
+
 ```tikz
 \begin{document}
   \begin{tikzpicture}
-    \draw (0,0) circle (2in);
-    \draw (0,1) circle (2in);
-    \draw (1,0) circle (2in);
+    \draw[help lines] ( -5,-5 ) grid ( 5, 5 );  
+    \draw[->, color=black] (-5,0) -- (5,0); 
+    \draw[->, color=black] (0, -5) -- (0, 5); 
   \end{tikzpicture}
 \end{document}
 ```
-
-aa bb
