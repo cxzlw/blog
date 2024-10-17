@@ -27,14 +27,14 @@ async function main() {
     let statistics = document.getElementById("statistics-div"); 
     let footer_inner = document.getElementsByClassName("footer-inner"); 
 
-    if (site_pv && site_pv_value && site_uv && site_uv_value && statistics && footer_inner) {
+    if (page_mv && page_mv_value && site_pv && site_pv_value && site_uv && site_uv_value && statistics && footer_inner) {
         footer_inner[0].appendChild(statistics);
         page_mv_value.textContent = result.page_mv; 
         site_pv_value.textContent = result.site_pv; 
         site_uv_value.textContent = result.site_uv; 
-        document.getElementById("page_mv").style = "display: inline; "
-        document.getElementById("site_pv").style = "display: inline; "
-        document.getElementById("site_uv").style = "display: inline; "
+        page_mv.style = "display: inline; "
+        site_pv.style = "display: inline; "
+        site_uv.style = "display: inline; "
     }
 }
 
