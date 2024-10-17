@@ -30,7 +30,7 @@ registerRoute(/^http:\/\/localhost:8000\/.*\.html/, networkFirst, "GET");
 const urls = self.__WB_MANIFEST.map(element => element["url"]);
 const index_urls = urls.filter(url => url.endsWith("index.html")).map(url => url.substring(0, url.length - 10)); 
 
-warmStrategyCache({urls:urls, strategy:staleWhileRevalidate}); 
+warmStrategyCache({urls:urls, strategy:networkFirst}); 
 warmStrategyCache({urls:index_urls, strategy:networkFirst}); 
 
 skipWaiting()
