@@ -1,14 +1,8 @@
 async function main() {
-    let resp = await fetch("https://blog-api.cxzlw.top/count", {
+    let url = window.location.href;
+    let resp = await fetch("https://blog-api.cxzlw.top/count?" + new URLSearchParams({page_url: url, t: new Date()}), {
         method: "POST", 
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(
-            {
-                "page_url": window.location.href
-            }
-        ),
+        cache: "no-cache"
     });
     
     let result = await resp.json(); 
@@ -24,6 +18,8 @@ async function main() {
         document.getElementById("page_pv").style = "display: inline; "
     }
 
+    let page_mv = document.getElementById("page_mv"); 
+    let page_mv_value = document.getElementById("page_mv_value"); 
     let site_pv = document.getElementById("site_pv"); 
     let site_pv_value = document.getElementById("site_pv_value"); 
     let site_uv = document.getElementById("site_uv"); 
@@ -33,8 +29,10 @@ async function main() {
 
     if (site_pv && site_pv_value && site_uv && site_uv_value && statistics && footer_inner) {
         footer_inner[0].appendChild(statistics);
+        page_mv_value.textContent = result.page_mv; 
         site_pv_value.textContent = result.site_pv; 
         site_uv_value.textContent = result.site_uv; 
+        document.getElementById("page_mv").style = "display: inline; "
         document.getElementById("site_pv").style = "display: inline; "
         document.getElementById("site_uv").style = "display: inline; "
     }
@@ -74,6 +72,7 @@ async function index_article_views() {
 }
 
 main(); 
+
 if (window.location.pathname === "/") {
     index_article_views(); 
 }

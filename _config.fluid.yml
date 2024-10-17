@@ -238,6 +238,7 @@ custom_js:
 # The usage is the same as custom_js
 custom_css:
  - '/css/transbg.css'
+ - '/css/custom.css'
 
 custom_head: 
  - '
