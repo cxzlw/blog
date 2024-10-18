@@ -7,7 +7,7 @@ title: 关于我
 
 网名：cxzlw[^1]
 
-年龄：<span id="age">~~永远的 18 岁~~</span>
+年龄：<span id="age" style="display: none;">~~永远的 18 岁~~</span>
 
 性别：女
 
@@ -62,4 +62,5 @@ GD 这块没有那么明显，所以明确自己是 trans 以及开始 HRT 之�
     const now = new Date();
     const age = Math.floor((now - birthday) / 1000 / 3600 / 24 / 365); 
     if (age <= 18) age_ele.innerText = "目前是 " + age + " 岁";
+    age_ele.style.display = "inline";
 </script>
