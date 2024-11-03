@@ -7,7 +7,7 @@ title: 关于我
 
 网名：cxzlw[^1]
 
-年龄：<span id="age" style="display: none;">~~永远的 18 岁~~</span>
+年龄：<span id="age" style="display: none;">~~永远的 17 岁~~</span>
 
 性别：女
 
