@@ -2,9 +2,18 @@ hexo.extend.filter.register("theme_inject", function (injects) {
     injects.postMetaTop.raw(
         "views",
         `
-    <span id="page_pv" style="display: none;">
+    <span id="page_pv" class="post-meta mr-2" style="display: none;">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
           <span id="page_pv_value"></span> 次
+    </span>
+    `,
+    );
+    injects.postMetaTop.raw(
+        "comment_count",
+        `
+    <span id="comment_count" class="post-meta mr-2" style="display: none;">
+          <i class="iconfont icon-comment" aria-hidden="true"></i>
+          <span id="comment_count_value"></span> 条
     </span>
     `,
     );

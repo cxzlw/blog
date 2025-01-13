@@ -49,6 +49,27 @@ async function main() {
         site_pv.style = "display: inline; ";
         site_uv.style = "display: inline; ";
     }
+
+    let comment_resp = await fetch(
+        "https://blog-waline.cxzlw.top/api/comment?" +
+            new URLSearchParams({
+                type: "count",
+                url: new URL(url).pathname,
+            }),
+        {
+            method: "GET",
+            cache: "no-cache",
+        },
+    );
+    let comment_count = (await comment_resp.json()).data[0];
+    let comment_count_ele = document.getElementById("comment_count");
+    let comment_count_value = document.getElementById("comment_count_value");
+
+    if (comment_count_ele && comment_count_value && metas) {
+        metas[0].appendChild(comment_count_ele);
+        comment_count_value.textContent = comment_count;
+        comment_count_ele.style = "display: inline; ";
+    }
 }
 
 async function article_views(element) {
