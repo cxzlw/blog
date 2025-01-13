@@ -1,6 +1,6 @@
 async function main() {
     let url = window.location.href;
-    let resp = await fetch(
+    let view_resp = await fetch(
         "https://blog-api.cxzlw.top/count?" +
             new URLSearchParams({ page_url: url, t: new Date() }),
         {
@@ -9,8 +9,8 @@ async function main() {
         },
     );
 
-    let result = await resp.json();
-    console.log(result);
+    let view_result = await view_resp.json();
+    console.log(view_result);
 
     let page_pv = document.getElementById("page_pv");
     let page_pv_value = document.getElementById("page_pv_value");
@@ -18,7 +18,7 @@ async function main() {
 
     if (page_pv && page_pv_value && metas) {
         metas[0].appendChild(page_pv);
-        page_pv_value.textContent = result.page_pv;
+        page_pv_value.textContent = view_result.page_pv;
         document.getElementById("page_pv").style = "display: inline; ";
     }
 
@@ -42,9 +42,9 @@ async function main() {
         footer_inner
     ) {
         footer_inner[0].appendChild(statistics);
-        page_mv_value.textContent = result.page_mv;
-        site_pv_value.textContent = result.site_pv;
-        site_uv_value.textContent = result.site_uv;
+        page_mv_value.textContent = view_result.page_mv;
+        site_pv_value.textContent = view_result.site_pv;
+        site_uv_value.textContent = view_result.site_uv;
         page_mv.style = "display: inline; ";
         site_pv.style = "display: inline; ";
         site_uv.style = "display: inline; ";
@@ -69,29 +69,28 @@ async function article_views(element) {
 
     let view_result = await view_resp.json();
     console.log(view_result);
+    let view_count = view_result.page_pv;
 
     let comment_resp = await fetch(
         "https://blog-waline.cxzlw.top/api/comment?" +
-            new URLSearchParams({ type: "count", url: url }),
+            new URLSearchParams({ type: "count", url: new URL(url).pathname }),
         {
             method: "GET",
             cache: "no-cache",
         },
     );
-    console.log(await comment_resp.json());
-
-    let count = view_result.page_pv;
+    let comment_count = (await comment_resp.json()).data[0];
 
     let node = document.createElement("div");
     post_metas.appendChild(node);
     node.outerHTML = `
     <div class="post-meta mr-3">
         <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span>${count}</span>
+        <span>${view_count}</span>
     </div>
     <div class="post-meta">
         <i class="iconfont icon-comment" aria-hidden="true"></i>
-        <span>${count}</span>
+        <span>${comment_count}</span>
     </div>`;
 }
 
