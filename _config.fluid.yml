@@ -243,8 +243,7 @@ custom_css:
 custom_head:
     - '
       <link rel="manifest" href="/manifest.json">
-      <script async type="module">import {Workbox} from "https://unpkg.com/workbox-window@7.1.0/build/workbox-window.prod.mjs";if ("serviceWorker" in navigator){const wb=new Workbox("/sw.js");wb.register();}</script>
-      '
+      <script async type="module">import {Workbox} from "https://unpkg.com/workbox-window@7.1.0/build/workbox-window.prod.mjs";if ("serviceWorker" in navigator){const wb=new Workbox("/sw.js");wb.register();}</script>'
 
 # 网页访问统计
 # Analysis of website visitors
@@ -433,8 +432,7 @@ footer:
     content: '
         <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
         <i class="iconfont icon-love"></i>
-        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
-        '
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>'
 
     # 展示网站的 PV、UV 统计数
     # Display website PV and UV statistics
