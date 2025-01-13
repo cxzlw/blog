@@ -1,8 +1,8 @@
 ---
 title: JSON 基础知识
 date: 2024-07-11 14:41:13
-tags: 
-  - cxzlw
+tags:
+    - cxzlw
 excerpt: 你是否曾经疑惑过，当我们提到 JSON 的时候，我们在说什么？JSON 以 JS 开头，那么其与 JS 的联系到底是什么？在这篇文章中，我们将尽可能通俗地了解 JSON 的起源、基本格式和意义，并解答一些常见的疑惑。
 license: "BY"
 ---
@@ -26,9 +26,10 @@ Crockford 率先设计并普及了 `JSON`。源自当年对不依赖 `Flash` & `
 ### 1. 基本结构
 
 `JSON` 由三种元素组成 [^1]，包括：
- - Object: 记录无序的映射关系，在 `Python` 中称为字典（`dict`），在一些语言中被称为映射（`map`）
- - Array: 记录有序的数据集合，在 `Python` 中称呼为列表（`list`）
- - Value：如其名，记录各种类型的数据，具体类型稍后解释
+
+- Object: 记录无序的映射关系，在 `Python` 中称为字典（`dict`），在一些语言中被称为映射（`map`）
+- Array: 记录有序的数据集合，在 `Python` 中称呼为列表（`list`）
+- Value：如其名，记录各种类型的数据，具体类型稍后解释
 
 这些结构都是 `language-independent` 的，被大部分现代计算机语言以各种形式支持。这使跨编程语言，进行数据交换成为一种可能 [^1]。
 
@@ -47,11 +48,12 @@ JSON Text = Value
 ### 3. Value
 
 其中 `Value` 是一个比较特别的元素，包括了不同的类型 [^1]，包括：
- - Object & Array：嵌套的 `Object` 和 `Array`
- - String：被引号 `""` 包住的字符串
- - Number：数字，包括 `fixed` 和 `float`
- - Boolean：布尔值, `true` 或 `false`
- - Null：空值，在 `Python` 中对应 `None`
+
+- Object & Array：嵌套的 `Object` 和 `Array`
+- String：被引号 `""` 包住的字符串
+- Number：数字，包括 `fixed` 和 `float`
+- Boolean：布尔值, `true` 或 `false`
+- Null：空值，在 `Python` 中对应 `None`
 
 `Value` 是一个基本概念，任何作为 `Object`, `Array`, `String`, `Number`, `Boolean`, `Null` 的数据都算作是 `Value`。
 
@@ -70,7 +72,7 @@ Value = Union[Object, Array, str, int, float, bool, None]
 `Object` 是 `JSON` 非常重要的一个组成部分甚至不少人认为 `JSON` 必须以 `{}` 作为最外层元素（尽管这并不正确 [^3]）。
 
 `Object` 内含有数对 `key-value` 的映射关系，其形态如下：
-    
+
 ```json
 {
     "key1": <value1>,
@@ -87,9 +89,10 @@ Value = Union[Object, Array, str, int, float, bool, None]
 
 ```json
 {
-    "key1": { // 这里 key1 对应的 value 是一个 Object
+    "key1": {
+        // 这里 key1 对应的 value 是一个 Object
         "key2": "value" // 这里 key2 对应的 value 是一个 String
-    }, 
+    },
     "key3": [1, 2, 3] // 这里 key3 对应的 value 是一个 Array
 }
 ```
@@ -114,7 +117,7 @@ Value = Union[Object, Array, str, int, float, bool, None]
 [
     [1, 2, 3], // 这里是一个 Array
     {
-        "key1": "value1",
+        "key1": "value1"
     }
 ]
 ```
@@ -163,6 +166,7 @@ null
 `Null` 也是 `Value` 的一种。[^1]
 
 ## 三、示例
+
 ```json
 {
     "name": "cxzlw", // string
@@ -170,26 +174,32 @@ null
     "gender": "mtf", // also string（夹杂私货）
     "balance": 123.45, // also number
     "is_student": true, // boolean
-    "hobbies": [ // array of strings
+    "hobbies": [
+        // array of strings
         "coding",
         "reading",
         "writing"
     ],
-    "friends": [ // array of objects
-        { // 这里演示的是一个 Object 嵌套在 Array 中，再嵌套在另一个 Object 中
+    "friends": [
+        // array of objects
+        {
+            // 这里演示的是一个 Object 嵌套在 Array 中，再嵌套在另一个 Object 中
             "name": "Alice",
             "age": 18,
-            "is_student": true, 
+            "is_student": true,
             "balance": 123.45
         },
         {
             "name": "Bob",
             "age": 19,
-            "is_student": false, 
+            "is_student": false,
             "balance": 123.45
         } // 末尾不能有逗号
     ] // 注意每个 [ 都要有与之配对的 ]
-} // 同样 { 要有配对的 }
+}
+
+
+// 同样 { 要有配对的 }
 ```
 
 ## 四、JSON 的意义
@@ -203,5 +213,7 @@ null
 ---
 
 [^1]: [介绍 JSON](https://www.json.org/json-zh.html)
+
 [^2]: [JSON - Wikipedia](https://en.wikipedia.org/wiki/JSON)
+
 [^3]: [JSON Grammar - RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259#section-2)

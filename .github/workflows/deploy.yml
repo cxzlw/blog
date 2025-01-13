@@ -1,57 +1,57 @@
 name: Hexo Deploy
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
+    build:
+        runs-on: ubuntu-latest
+        if: github.event.repository.owner.id == github.event.sender.id
 
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v3
-        with:
-          ref: main
-      
-      - name: Set Timezone
-        uses: szenius/set-timezone@v1.2
-        with:
-          # Desired timezone for Linux
-          timezoneLinux: "Asia/Shanghai"
+        steps:
+            - name: Checkout source
+              uses: actions/checkout@v3
+              with:
+                  ref: main
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+            - name: Set Timezone
+              uses: szenius/set-timezone@v1.2
+              with:
+                  # Desired timezone for Linux
+                  timezoneLinux: "Asia/Shanghai"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'pnpm'
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 8
 
-      - name: Setup Hexo
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 700 ~/.ssh
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "wsc_zds@qq.com"
-          git config --global user.name "cxzlw"
-          pnpm install hexo-cli -g
-          pnpm install
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "18"
+                  cache: "pnpm"
 
-      - name: Deploy
-        run: |
-          git clone https://github.com/cxzlw/cxzlw.github.io.git .deploy_git
-          hexo clean
-          hexo generate
-          pnpm workbox injectManifest workbox-config.js
-          # pnpm gulp
-          hexo deploy
+            - name: Setup Hexo
+              env:
+                  ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
+              run: |
+                  mkdir -p ~/.ssh/
+                  echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+                  chmod 700 ~/.ssh
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan github.com >> ~/.ssh/known_hosts
+                  git config --global user.email "wsc_zds@qq.com"
+                  git config --global user.name "cxzlw"
+                  pnpm install hexo-cli -g
+                  pnpm install
+
+            - name: Deploy
+              run: |
+                  git clone https://github.com/cxzlw/cxzlw.github.io.git .deploy_git
+                  hexo clean
+                  hexo generate
+                  pnpm workbox injectManifest workbox-config.js
+                  # pnpm gulp
+                  hexo deploy

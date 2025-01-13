@@ -1,10 +1,6 @@
-$(
-    () => {
-        setTimeout(
-            () => {
-                NProgress.done(); 
-                NProgress.start = () => {}; 
-            }, 100
-            ); 
-    }
-); 
+$(() => {
+    setTimeout(() => {
+        NProgress.done();
+        NProgress.start = () => {};
+    }, 100);
+});

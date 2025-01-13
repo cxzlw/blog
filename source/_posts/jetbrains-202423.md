@@ -73,6 +73,7 @@ EQUAL,11246144113351962537727803356337763121708081047804487791300358391464817209
 ![贴入激活码](../img/image-24.png)
 ![激活成功](../img/image-23.png)
 {% endgi %}
+
 <figcaption aria-hidden="true" class="image-caption">左：贴入激活码 右：激活成功</figcaption>
 
 注意到，部分插件 `热心大佬` 没有提供激活码，而且授权给的用户名是固定的。如果你想要使用自己电脑的用户名，亦或者是使用没有激活码的插件，可以使用下面的激活服务器。
@@ -101,4 +102,5 @@ https://ls.cxzlw.top/
 ## 注
 
 [^1]: [JetBrains 新版本区域选择的坑](https://zhile.io/2024/09/05/jetbrains-2024-2-region.html)
+
 [^2]: 内容来自 [ls.cxzlw.top](https://ls.cxzlw.top/)

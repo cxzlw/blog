@@ -2,10 +2,10 @@
 title: Zerotier 自定义 Planet 后与标准节点互通
 date: 2023-07-06 12:37:41
 excerpt: "由于国内特殊的网络原因，Zerotier 官方提供的 Planet 用户体验不佳。为此，不少人选择自建私有 Moon，甚至私有 Planet 服务器。然而，正如官方文档所说，使用私有 Planet 服务器会使你的节点无法找到其他的标准节点。本文试图提出一种方案在使用私有 Planet 服务器的同时与标准节点通信。"
-tags: 
- - Zerotier
- - 自建 Planet
- - cxzlw
+tags:
+    - Zerotier
+    - 自建 Planet
+    - cxzlw
 license: "BY"
 author: "cxzlw"
 ---
@@ -25,18 +25,18 @@ zerotier-idtool initmoon identity.public >> planet.json
 
 ```json
 {
- "id": "xxx",
- "objtype": "world",
- "roots": [
-  {
-   "identity": "xxx",
-   "stableEndpoints": []
-  }
- ],
- "signingKey": "xxx",
- "signingKey_SECRET": "xxx",
- "updatesMustBeSignedBy": "xxx",
- "worldType": "moon"
+    "id": "xxx",
+    "objtype": "world",
+    "roots": [
+        {
+            "identity": "xxx",
+            "stableEndpoints": []
+        }
+    ],
+    "signingKey": "xxx",
+    "signingKey_SECRET": "xxx",
+    "updatesMustBeSignedBy": "xxx",
+    "worldType": "moon"
 }
 ```
 
@@ -101,30 +101,39 @@ cafe04eba9:0:6c6a9d1dea55c1616bfe2a2b8f0ff9a8cacaf70374fb1f39e3bef81cbfebef17b72
 
 ```json
 {
- "id": "cafe9efeb9",
- "objtype": "world",
- "roots": [
-    {
-     "identity": "cafe9efeb9:0:ccdef76bc7b97ded904eabc5df09886d9c1514a610036cb9139cc214001a2958978efcec15712dd3948c6e6b3a8e893df01ff493d1f8d9806a860c5420571bf0",
-     "stableEndpoints": ["104.194.8.134/9993", "2605:9880:200:1200:30:571:e34:51/9993"]
-    }, 
-    {
-     "identity": "778cde7190:0:3f6681a99e5ad1895e9fba33e6212d4454e168bcec7112101bf000956ed8e92e42892cb6f2ec410881a84ab19da50e1287ba3d926c3a1f755cccf299a1207055",
-     "stableEndpoints": ["103.195.103.66/9993", "2605:9880:400:c3:254:f2bc:a1f7:19/9993"]
-    }, 
-    {
-     "identity": "62f865ae71:0:e2076c57de870e6288d7d5e7404408b1545efca37d67f77b87e9e54168c25d3ef1a9abf2905ea5e785c01dff23887ad4232d95c7a8fd2c27111a72bd159322dc",
-     "stableEndpoints": ["50.7.252.138/9993", "2001:49f0:d0db:2::2/9993"]
-    }, 
-    {
-     "identity": "cafe04eba9:0:6c6a9d1dea55c1616bfe2a2b8f0ff9a8cacaf70374fb1f39e3bef81cbfebef17b7228268a0a2a29d3488c752565c6c965cbd6506ec24397cc8a5d9d15285a87f",
-     "stableEndpoints": ["84.17.53.155/9993", "2a02:6ea0:d405::9993/9993"]
-    }
- ],
- "signingKey": "xxx",
- "signingKey_SECRET": "xxx",
- "updatesMustBeSignedBy": "xxx",
- "worldType": "moon"
+    "id": "cafe9efeb9",
+    "objtype": "world",
+    "roots": [
+        {
+            "identity": "cafe9efeb9:0:ccdef76bc7b97ded904eabc5df09886d9c1514a610036cb9139cc214001a2958978efcec15712dd3948c6e6b3a8e893df01ff493d1f8d9806a860c5420571bf0",
+            "stableEndpoints": [
+                "104.194.8.134/9993",
+                "2605:9880:200:1200:30:571:e34:51/9993"
+            ]
+        },
+        {
+            "identity": "778cde7190:0:3f6681a99e5ad1895e9fba33e6212d4454e168bcec7112101bf000956ed8e92e42892cb6f2ec410881a84ab19da50e1287ba3d926c3a1f755cccf299a1207055",
+            "stableEndpoints": [
+                "103.195.103.66/9993",
+                "2605:9880:400:c3:254:f2bc:a1f7:19/9993"
+            ]
+        },
+        {
+            "identity": "62f865ae71:0:e2076c57de870e6288d7d5e7404408b1545efca37d67f77b87e9e54168c25d3ef1a9abf2905ea5e785c01dff23887ad4232d95c7a8fd2c27111a72bd159322dc",
+            "stableEndpoints": ["50.7.252.138/9993", "2001:49f0:d0db:2::2/9993"]
+        },
+        {
+            "identity": "cafe04eba9:0:6c6a9d1dea55c1616bfe2a2b8f0ff9a8cacaf70374fb1f39e3bef81cbfebef17b7228268a0a2a29d3488c752565c6c965cbd6506ec24397cc8a5d9d15285a87f",
+            "stableEndpoints": [
+                "84.17.53.155/9993",
+                "2a02:6ea0:d405::9993/9993"
+            ]
+        }
+    ],
+    "signingKey": "xxx",
+    "signingKey_SECRET": "xxx",
+    "updatesMustBeSignedBy": "xxx",
+    "worldType": "moon"
 }
 ```
 

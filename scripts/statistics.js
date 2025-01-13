@@ -1,11 +1,16 @@
-hexo.extend.filter.register('theme_inject', function(injects) {
-	injects.postMetaTop.raw('views', `
+hexo.extend.filter.register("theme_inject", function (injects) {
+    injects.postMetaTop.raw(
+        "views",
+        `
     <span id="page_pv" style="display: none;">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
           <span id="page_pv_value"></span> 次
     </span>
-    `);
-    injects.footer.raw('statistics-div', `
+    `,
+    );
+    injects.footer.raw(
+        "statistics-div",
+        `
     <div id="statistics-div" class="statistics-div">
         <span id="page_mv" class="statistics-span" style="display: none">
                 你访问了这个页面
@@ -25,9 +30,13 @@ hexo.extend.filter.register('theme_inject', function(injects) {
                 人
             </span>
         </div>
-    </div>`); 
+    </div>`,
+    );
 
-    injects.bodyEnd.raw('statistics-js', `
+    injects.bodyEnd.raw(
+        "statistics-js",
+        `
     <script async src="/js/statistics.js"></script>
-    `); 
+    `,
+    );
 });

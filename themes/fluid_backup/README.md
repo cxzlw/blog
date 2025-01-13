@@ -51,7 +51,7 @@ Hexo 5.0.0 版本以上，推荐通过 npm 直接安装，进入博客目录执�
 npm install --save hexo-theme-fluid
 ```
 
-然后在博客目录下创建 `_config.fluid.yml`，将主题的 [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) 内容复制进去。
+然后在博客目录下创建 `_config.fluid.yml`，将主题的 [\_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml) 内容复制进去。
 
 **方式二：**
 
@@ -62,9 +62,9 @@ npm install --save hexo-theme-fluid
 如下修改 Hexo 博客目录中的 `_config.yml`：
 
 ```yaml
-theme: fluid  # 指定主题
+theme: fluid # 指定主题
 
-language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改
+language: zh-CN # 指定语言，会影响主题显示的语言，按需修改
 ```
 
 #### 4. 创建「关于页」
@@ -84,7 +84,6 @@ hexo new page about
 title: about
 layout: about
 ---
-
 这里写关于页的正文，支持 Markdown, HTML
 ```
 

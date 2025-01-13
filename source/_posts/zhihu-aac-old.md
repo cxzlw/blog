@@ -3,24 +3,23 @@ title: 聊聊知乎盐选反爬 (回答页篇)
 date: 2023-07-05 01:49:31
 index_img: /img/image.webp
 excerpt: "最近，知乎上线了针对专栏中盐选文章的反爬系统，随后该系统也被运用在知乎回答页面中的盐选文章上。具体表现为爬取的文章内容中出现大量的错乱词汇。而在本篇文章中，我们将一步步带领各位解开这些乱码。在这个过程中，我们将对字体反爬有更深入的认识，并学到运用字体反爬时需要注意的问题。"
-tags: 
- - 知乎
- - 反爬
- - 逆向
- - 爬虫
- - Python
- - cxzlw
+tags:
+    - 知乎
+    - 反爬
+    - 逆向
+    - 爬虫
+    - Python
+    - cxzlw
 license: "BY"
 ---
 
 最近，知乎上线了针对专栏[^1]中盐选文章的反爬系统，随后该系统也被运用在知乎回答页面中的盐选文章上。具体表现为爬取的文章内容中出现大量的错乱词汇。而在本篇文章中，我们将一步步带领各位解开这些乱码。在这个过程中，我们将对字体反爬有更深入的认识，并学到运用字体反爬时需要注意的问题。
 
-
 ## 一、知乎反爬效果
 
 来自知乎回答[不被爱是一种什么样的感受？ - 知乎](https://www.zhihu.com/question/41922324/answer/3073556909)
 
-![乱码示意图](../img/image.webp) 
+![乱码示意图](../img/image.webp)
 
 如图所示，在页面源码中出现了大量乱码，例如（原字，错字）：[^2]
 
@@ -44,11 +43,11 @@ license: "BY"
 
 将字体后缀名改为 .ttf [^3] 并打开。
 
-
 {% gi total 2 %}
 ![正常字体](../img/image-3.png)
 ![反爬字体](../img/image-4.png)
 {% endgi %}
+
 <figcaption aria-hidden="true" class="image-caption">左：正常字体 右：反爬字体</figcaption>
 
 与正常字体对比，我们下载的字体明显替换了部分字体，这便是知乎用于反爬的字体了。接下来我们将分析这个字体并给出应对方案。
@@ -157,6 +156,7 @@ print(new_content)  # 中间那块奶酪夹心，是饼干被人喜爱的灵魂�
 （敬请期待）
 
 ## 友情链接
+
 - [C的云存储 - C的云存储所有作品均由用户提供上传分享，仅供网友学习交流!若您的权利被侵害，请联系 357158361@qq.com](https://cdycc.cn/)
 - [GitHub - cxzlw/zhihuDecrypt](https://github.com/cxzlw/zhihuDecrypt)
 - [GitHub - cxzlw/zhihuDecryptApp: The app to decrypt zhihu's encrypted (probably not) passages.](https://github.com/cxzlw/zhihuDecryptApp)
@@ -169,7 +169,7 @@ print(new_content)  # 中间那块奶酪夹心，是饼干被人喜爱的灵魂�
 
 [^3]: .ttf 是因为 `data:font/ttf;...` 代表该字体是 ttf 格式的。
 
-[^4]: 基于笔画比对的反爬破解见该文章：[字体反爬之汽车之家_51CTO博客_汽车之家字体反爬](https://blog.51cto.com/u_15289428/2992542)（话说这篇文章和下面注 9 是一个网站吧）
+[^4]: 基于笔画比对的反爬破解见该文章：[字体反爬之汽车之家*51CTO博客*汽车之家字体反爬](https://blog.51cto.com/u_15289428/2992542)（话说这篇文章和下面注 9 是一个网站吧）
 
 [^5]: fontTools文档：[fontTools Docs — fontTools Documentation](https://fonttools.readthedocs.io/en/latest/)
 

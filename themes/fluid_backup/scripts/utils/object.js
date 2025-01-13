@@ -1,36 +1,40 @@
-'use strict';
+"use strict";
 
 const isObject = (obj) => {
-  return obj && typeof obj === 'object' && !Array.isArray(obj);
+    return obj && typeof obj === "object" && !Array.isArray(obj);
 };
 
 const isNotEmptyObject = (obj) => {
-  return obj && typeof obj === 'object' && Object.getOwnPropertyNames(obj).length !== 0;
+    return (
+        obj &&
+        typeof obj === "object" &&
+        Object.getOwnPropertyNames(obj).length !== 0
+    );
 };
 
 const isEmptyObject = (obj) => {
-  return !isNotEmptyObject(obj);
+    return !isNotEmptyObject(obj);
 };
 
 const merge = (target, ...sources) => {
-  for (const source of sources) {
-    for (const key in source) {
-      if (!Object.prototype.hasOwnProperty.call(source, key)) {
-        continue;
-      }
-      if (isObject(target[key]) && isObject(source[key])) {
-        merge(target[key], source[key]);
-      } else {
-        target[key] = source[key];
-      }
+    for (const source of sources) {
+        for (const key in source) {
+            if (!Object.prototype.hasOwnProperty.call(source, key)) {
+                continue;
+            }
+            if (isObject(target[key]) && isObject(source[key])) {
+                merge(target[key], source[key]);
+            } else {
+                target[key] = source[key];
+            }
+        }
     }
-  }
-  return target;
+    return target;
 };
 
 module.exports = {
-  isObject,
-  isNotEmptyObject,
-  isEmptyObject,
-  merge
+    isObject,
+    isNotEmptyObject,
+    isEmptyObject,
+    merge,
 };

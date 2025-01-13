@@ -1,13 +1,13 @@
 ---
 title: 网易云音乐歌单接口逆向
 date: 2024-07-13 19:13:07
-tags: 
-  - cxzlw
-  - 爬虫
-  - 逆向
-  - 网易云音乐
-  - Python
-  - JavaScript
+tags:
+    - cxzlw
+    - 爬虫
+    - 逆向
+    - 网易云音乐
+    - Python
+    - JavaScript
 excerpt: 事情的起因，是想给博客的一言做一点小小的改进。准备使用咱喵个人歌单内，随机抽取的歌词作为一言。在获取歌词之前，先要获取歌单内的歌曲列表。然而，网易云的歌单接口并不是那么好获取的。于是，便有了这篇文章。
 license: "BY"
 ---
@@ -73,31 +73,36 @@ https://music.163.com/#/playlist?id=2326800663
 更加关键的是，我们看到了一段正在给 `params` 和 `encSecKey` 赋值的代码。这两个参数就是我们要找的加密参数。
 
 ```javascript
-var bVi6c = window.asrsea(JSON.stringify(i0x), bse6Y(["流泪", "强"]), bse6Y(Qu1x.md), bse6Y(["爱心", "女孩", "惊恐", "大笑"]));
+var bVi6c = window.asrsea(
+    JSON.stringify(i0x),
+    bse6Y(["流泪", "强"]),
+    bse6Y(Qu1x.md),
+    bse6Y(["爱心", "女孩", "惊恐", "大笑"]),
+);
 e0x.data = j0x.cr1x({
     params: bVi6c.encText,
-    encSecKey: bVi6c.encSecKey
-})
+    encSecKey: bVi6c.encSecKey,
+});
 ```
 
 柿子要挑软的捏，我们先看看 `i0x` 是怎么生成的：
 
 ```javascript
 var e0x = {
-    "type": "json",
-    "query": {
-        "id": "3136952023",
-        "ids": "[\"3136952023\"]",
-        "limit": 10000,
-        "offset": 0
-    }
-}; 
+    type: "json",
+    query: {
+        id: "3136952023",
+        ids: '["3136952023"]',
+        limit: 10000,
+        offset: 0,
+    },
+};
 
 var i0x = {};
 
 // i0x = NEJ.X(i0x, j0x.fQ1x(e0x.query) ? j0x.gP1x(e0x.query) : e0x.query)
 
-// NEJ.X 实验一下好像就是把两个对象合并了，playlist 传参只有 query 
+// NEJ.X 实验一下好像就是把两个对象合并了，playlist 传参只有 query
 // j0x.fQ1x 应该是判断 query 是不是字符串，是的话按照 query 参数的方式解析
 // 比如 "id=1&username=abc" 这种叫 query 参数，这里发现 e0x.query 是对象，所以简化一下直接赋值
 
@@ -120,58 +125,61 @@ i0x["csrf_token"] = ""; //  这里直接传空字符串就行，下断点抓到�
 这个函数就是把对象转换成 URL 参数的形式。
 
 然后就是几个硬家伙了，先看 `window.asrsea`，在 f12 的 console 里面发现实际上是 `function d(d, e, f, g)`：
+
 ```javascript
 // 生成长度为 a 的随机大小写字母数字字符串
-function a(a) { // a 是长度
-    var b = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" // 大小写字母和数字
+function a(a) {
+    // a 是长度
+    var b = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // 大小写字母和数字
     var c = ""; // 返回的字符串
-    var d, e
-    for (d = 0; d < a; d += 1) // 循环 a 次
-        e = Math.random() * b.length, 
-        e = Math.floor(e), 
-        c += b.charAt(e); // c 后面拼一个随机选取的字符
-    return c
+    var d, e;
+    for (
+        d = 0;
+        d < a;
+        d += 1 // 循环 a 次
+    )
+        (e = Math.random() * b.length), (e = Math.floor(e)), (c += b.charAt(e)); // c 后面拼一个随机选取的字符
+    return c;
 }
 
 // AES 加密，a 是要加密的字符串，b 是密钥，CBC 模式，iv 是 0102030405060708
 // 返回加密后的 base64 字符串
 function b(a, b) {
-    var c = CryptoJS.enc.Utf8.parse(b), 
-        d = CryptoJS.enc.Utf8.parse("0102030405060708"), 
-        e = CryptoJS.enc.Utf8.parse(a); 
+    var c = CryptoJS.enc.Utf8.parse(b),
+        d = CryptoJS.enc.Utf8.parse("0102030405060708"),
+        e = CryptoJS.enc.Utf8.parse(a);
     var f = CryptoJS.AES.encrypt(e, c, {
         iv: d,
-        mode: CryptoJS.mode.CBC
+        mode: CryptoJS.mode.CBC,
     });
-    return f.toString()
+    return f.toString();
 }
 
 function RSAKeyPair(a, b, c) {
-    this.e = biFromHex(a), // RSA e 公钥指数
-    this.d = biFromHex(b), // RSA d 私钥指数
-    this.m = biFromHex(c), // RSA n 模数
-    this.chunkSize = 2 * biHighIndex(this.m),
-    this.radix = 16,
-    this.barrett = new BarrettMu(this.m)
+    (this.e = biFromHex(a)), // RSA e 公钥指数
+        (this.d = biFromHex(b)), // RSA d 私钥指数
+        (this.m = biFromHex(c)), // RSA n 模数
+        (this.chunkSize = 2 * biHighIndex(this.m)),
+        (this.radix = 16),
+        (this.barrett = new BarrettMu(this.m));
 }
 
 // RSA 加密
 function c(a, b, c) {
     var d, e;
     setMaxDigits(131); // 这行好像无所谓？
-    d = new RSAKeyPair(b,"",c); // b 是 RSA e，c 是 RSA m
+    d = new RSAKeyPair(b, "", c); // b 是 RSA e，c 是 RSA m
     e = encryptedString(d, a); // RSA 加密 a 使用 d
-    return e; 
+    return e;
 }
 
-
 function d(d, e, f, g) {
-    var h = {}
+    var h = {};
     var i = a(16); // 生成长度为 16 的随机字符串
-    h.encText = b(d, g) // AES 加密 d 使用密钥 g
-    h.encText = b(h.encText, i) // AES 加密上一步的结果使用 i
-    h.encSecKey = c(i, e, f) // RSA 加密 i 使用 e 和 f
-    return h
+    h.encText = b(d, g); // AES 加密 d 使用密钥 g
+    h.encText = b(h.encText, i); // AES 加密上一步的结果使用 i
+    h.encSecKey = c(i, e, f); // RSA 加密 i 使用 e 和 f
+    return h;
 }
 ```
 
@@ -185,35 +193,147 @@ function d(d, e, f, g) {
 
 ```javascript
 // 两个下面用到的变量，看起来和表情有关，但是实际上是 mappings，和某个加密参数 mapping 前的状态
-Qu1x.emj = {'色': '00e0b', '流感': '509f6', '这边': '259df', '弱': '8642d', '嘴唇': 'bc356', '亲': '62901', '开心': '477df', '呲牙': '22677', '憨笑': 'ec152', '猫': 'b5ff6', '皱眉': '8ace6', '幽灵': '15bb7', '蛋糕': 'b7251', '发怒': '52b3a', '大哭': 'b17a8', '兔子': '76aea', '星星': '8a5aa', '钟情': '76d2e', '牵手': '41762', '公鸡': '9ec4e', '爱意': 'e341f', '禁止': '56135', '狗': 'fccf6', '亲亲': '95280', '叉': '104e0', '礼物': '312ec', '晕': 'bda92', '呆': '557c9', '生病': '38701', '钻石': '14af6', '拜': 'c9d05', '怒': 'c4f7f', '示爱': '0c368', '汗': '5b7a4', '小鸡': '6bee2', '痛苦': '55932', '撇嘴': '575cc', '惶恐': 'e10b4', '口罩': '24d81', '吐舌': '3cfe4', '心碎': '875d3', '生气': 'e8204', '可爱': '7b97d', '鬼脸': 'def52', '跳舞': '741d5', '男孩': '46b8e', '奸笑': '289dc', '猪': '6935b', '圈': '3ece0', '便便': '462db', '外星': '0a22b', '圣诞': '8e7', '流泪': '01000', '强': '1', '爱心': '0CoJU', '女孩': 'm6Qyw', '惊恐': '8W8ju', '大笑': 'd'};
-Qu1x.md = ["色", "流感", "这边", "弱", "嘴唇", "亲", "开心", "呲牙", "憨笑", "猫", "皱眉", "幽灵", "蛋糕", "发怒", "大哭", "兔子", "星星", "钟情", "牵手", "公鸡", "爱意", "禁止", "狗", "亲亲", "叉", "礼物", "晕", "呆", "生病", "钻石", "拜", "怒", "示爱", "汗", "小鸡", "痛苦", "撇嘴", "惶恐", "口罩", "吐舌", "心碎", "生气", "可爱", "鬼脸", "跳舞", "男孩", "奸笑", "猪", "圈", "便便", "外星", "圣诞"]; 
+Qu1x.emj = {
+    色: "00e0b",
+    流感: "509f6",
+    这边: "259df",
+    弱: "8642d",
+    嘴唇: "bc356",
+    亲: "62901",
+    开心: "477df",
+    呲牙: "22677",
+    憨笑: "ec152",
+    猫: "b5ff6",
+    皱眉: "8ace6",
+    幽灵: "15bb7",
+    蛋糕: "b7251",
+    发怒: "52b3a",
+    大哭: "b17a8",
+    兔子: "76aea",
+    星星: "8a5aa",
+    钟情: "76d2e",
+    牵手: "41762",
+    公鸡: "9ec4e",
+    爱意: "e341f",
+    禁止: "56135",
+    狗: "fccf6",
+    亲亲: "95280",
+    叉: "104e0",
+    礼物: "312ec",
+    晕: "bda92",
+    呆: "557c9",
+    生病: "38701",
+    钻石: "14af6",
+    拜: "c9d05",
+    怒: "c4f7f",
+    示爱: "0c368",
+    汗: "5b7a4",
+    小鸡: "6bee2",
+    痛苦: "55932",
+    撇嘴: "575cc",
+    惶恐: "e10b4",
+    口罩: "24d81",
+    吐舌: "3cfe4",
+    心碎: "875d3",
+    生气: "e8204",
+    可爱: "7b97d",
+    鬼脸: "def52",
+    跳舞: "741d5",
+    男孩: "46b8e",
+    奸笑: "289dc",
+    猪: "6935b",
+    圈: "3ece0",
+    便便: "462db",
+    外星: "0a22b",
+    圣诞: "8e7",
+    流泪: "01000",
+    强: "1",
+    爱心: "0CoJU",
+    女孩: "m6Qyw",
+    惊恐: "8W8ju",
+    大笑: "d",
+};
+Qu1x.md = [
+    "色",
+    "流感",
+    "这边",
+    "弱",
+    "嘴唇",
+    "亲",
+    "开心",
+    "呲牙",
+    "憨笑",
+    "猫",
+    "皱眉",
+    "幽灵",
+    "蛋糕",
+    "发怒",
+    "大哭",
+    "兔子",
+    "星星",
+    "钟情",
+    "牵手",
+    "公鸡",
+    "爱意",
+    "禁止",
+    "狗",
+    "亲亲",
+    "叉",
+    "礼物",
+    "晕",
+    "呆",
+    "生病",
+    "钻石",
+    "拜",
+    "怒",
+    "示爱",
+    "汗",
+    "小鸡",
+    "痛苦",
+    "撇嘴",
+    "惶恐",
+    "口罩",
+    "吐舌",
+    "心碎",
+    "生气",
+    "可爱",
+    "鬼脸",
+    "跳舞",
+    "男孩",
+    "奸笑",
+    "猪",
+    "圈",
+    "便便",
+    "外星",
+    "圣诞",
+];
 ```
 
 ```javascript
 // 基本上就是 k0x.forEach(cH1x) 了
-j0x.bh0x = function(k0x, cH1x, O0x) {
+j0x.bh0x = function (k0x, cH1x, O0x) {
     // if (!k0x || !k0x.length || !j0x.gS2x(cH1x))
     //     return this;
-    if (!!k0x.forEach) { // 如果 k0x 有 forEach 方法，这里是有的
+    if (!!k0x.forEach) {
+        // 如果 k0x 有 forEach 方法，这里是有的
         k0x.forEach(cH1x, O0x); // O0x 是 this，但是没用到
-        return this
+        return this;
     }
     // for (var i = 0, l = k0x.length; i < l; i++)
     //     cH1x.call(O0x, k0x[i], i, k0x);
     // return this
-}
+};
 
-var bse6Y = function(cxX9O) {
+var bse6Y = function (cxX9O) {
     var m0x = [];
-    j0x.bh0x(cxX9O, function(cxW9N) { // 一手 forEach 把cxX9O 每个元素 ele map 成 Qu1x.emj[ele]
-        m0x.push(Qu1x.emj[cxW9N])
+    j0x.bh0x(cxX9O, function (cxW9N) {
+        // 一手 forEach 把cxX9O 每个元素 ele map 成 Qu1x.emj[ele]
+        m0x.push(Qu1x.emj[cxW9N]);
     });
-    return m0x.join("") // 最后 join 回字符串
+    return m0x.join(""); // 最后 join 回字符串
 };
 ```
 
-那么我们大概就分析明白这里的参数了。`Qu1x.emj` 是一个映射表，把一些词语映射成一些 16 进制 / 大小写+数字字符串  的内容。`Qu1x.md` 是一个数组，里面是一些词语。`bse6Y` 函数接受一个数组，返回一个字符串，这个字符串是把数组里的每个元素映射成 `Qu1x.emj` 里的内容，然后拼接起来的。
+那么我们大概就分析明白这里的参数了。`Qu1x.emj` 是一个映射表，把一些词语映射成一些 16 进制 / 大小写+数字字符串 的内容。`Qu1x.md` 是一个数组，里面是一些词语。`bse6Y` 函数接受一个数组，返回一个字符串，这个字符串是把数组里的每个元素映射成 `Qu1x.emj` 里的内容，然后拼接起来的。
 
 ## Python 实现
-
-

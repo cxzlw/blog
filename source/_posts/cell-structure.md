@@ -161,7 +161,7 @@ Prokaryotic cell **do not** have Mitochondria and Nucleus but organelles below.
 
 Rigid to keep the shape of the cell, strengthens the cell.
 
-- Made of __peptidoglycan__ not cellulose
+- Made of **peptidoglycan** not cellulose
 
 ### Circular DNA
 
@@ -181,7 +181,7 @@ Small circles of DNA.
 ### Organelles in cells
 
 | Organelles \ Cells | Plant Cell | Animal Cell | Prokaryotic Cell |
-|--------------------|------------|-------------|------------------|
+| ------------------ | ---------- | ----------- | ---------------- |
 | Cell Wall          | Yes        |             |                  |
 | Cell Membrane      | Yes        | Yes         | Yes              |
 | Chloroplasts       | Yes        |             |                  |

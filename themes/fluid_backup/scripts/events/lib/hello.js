@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
 module.exports = (hexo) => {
-  if (hexo.theme.has_hello) {
-    return;
-  }
+    if (hexo.theme.has_hello) {
+        return;
+    }
 
-  if (hexo.theme.i18n.languages[0].search(/zh-CN/i) !== -1) {
-    hexo.log.info(`
+    if (hexo.theme.i18n.languages[0].search(/zh-CN/i) !== -1) {
+        hexo.log.info(`
 ------------------------------------------------
 |                                              |
 |     ________  __            _        __      |
@@ -21,8 +21,8 @@ module.exports = (hexo) => {
 |                                              |
 ------------------------------------------------
 `);
-  } else {
-    hexo.log.info(`
+    } else {
+        hexo.log.info(`
 ------------------------------------------------
 |                                              |
 |     ________  __            _        __      |
@@ -37,7 +37,7 @@ module.exports = (hexo) => {
 |                                              |
 ------------------------------------------------
 `);
-  }
+    }
 
-  hexo.theme.has_hello = true;
+    hexo.theme.has_hello = true;
 };

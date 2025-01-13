@@ -2,11 +2,11 @@
 title: 不蒜子在 Safari 中计数异常
 date: 2023-10-03 23:06:16
 tags:
-  - Hexo
-  - 不蒜子
-  - busuanzi
-  - Fluid
-  - cxzlw
+    - Hexo
+    - 不蒜子
+    - busuanzi
+    - Fluid
+    - cxzlw
 license: "BY-NC-SA"
 excerpt: "近期，我的博客在 Safari 中，文章访问量异常的大。经过抓包，确认了问题与 Referer 头相关。然而，Referrer-Policy 并没有解决问题。这与其接口设计有关。本文将进行解释，并提出我的解决方案。"
 ---
@@ -52,7 +52,7 @@ excerpt: "近期，我的博客在 Safari 中，文章访问量异常的大。�
 于是我设置了 `Referrer-Policy`。具体来说，我将下面的代码加入了我的博客：
 
 ```html
-<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="referrer" content="no-referrer-when-downgrade" />
 ```
 
 还有一些设置 `Referrer-Policy` 的方法：
@@ -79,91 +79,106 @@ excerpt: "近期，我的博客在 Safari 中，文章访问量异常的大。�
 
 ```javascript
 var bszCaller, bszTag;
-!function() {
-    var c, d, e, a = !1, b = [];
-    ready = function(c) {
-        return a || "interactive" === document.readyState || "complete" === document.readyState ? c.call(document) : b.push(function() {
-            return c.call(this)
-        }),
-        this
-    }
-    ,
-    d = function() {
-        for (var a = 0, c = b.length; c > a; a++)
-            b[a].apply(document);
-        b = []
-    }
-    ,
-    e = function() {
-        a || (a = !0,
-        d.call(window),
-        document.removeEventListener ? document.removeEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.detachEvent("onreadystatechange", e),
-        window == window.top && (clearInterval(c),
-        c = null)))
-    }
-    ,
-    document.addEventListener ? document.addEventListener("DOMContentLoaded", e, !1) : document.attachEvent && (document.attachEvent("onreadystatechange", function() {
-        /loaded|complete/.test(document.readyState) && e()
+!(function () {
+    var c,
+        d,
+        e,
+        a = !1,
+        b = [];
+    (ready = function (c) {
+        return (
+            a ||
+            "interactive" === document.readyState ||
+            "complete" === document.readyState
+                ? c.call(document)
+                : b.push(function () {
+                      return c.call(this);
+                  }),
+            this
+        );
     }),
-    window == window.top && (c = setInterval(function() {
-        try {
-            a || document.documentElement.doScroll("left")
-        } catch (b) {
-            return
-        }
-        e()
-    }, 5)))
-}(),
-bszCaller = {
-    fetch: function(a, b) {
-        var c = "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
-        window[c] = this.evalCall(b),
-        a = a.replace("=BusuanziCallback", "=" + c),
-        scriptTag = document.createElement("SCRIPT"),
-        scriptTag.type = "text/javascript",
-        scriptTag.defer = !0,
-        scriptTag.src = a,
-        scriptTag.referrerPolicy = "no-referrer-when-downgrade",
-        document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)
-    },
-    evalCall: function(a) {
-        return function(b) {
-            ready(function() {
-                try {
-                    a(b),
-                    scriptTag.parentElement.removeChild(scriptTag)
-                } catch (c) {
-                    bszTag.hides()
-                }
-            })
-        }
-    }
-},
-bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) {
-    bszTag.texts(a),
-    bszTag.shows()
-}),
-bszTag = {
-    bszs: ["site_pv", "page_pv", "site_uv"],
-    texts: function(a) {
-        this.bszs.map(function(b) {
-            var c = document.getElementById("busuanzi_value_" + b);
-            c && (c.innerHTML = a[b])
-        })
-    },
-    hides: function() {
-        this.bszs.map(function(a) {
-            var b = document.getElementById("busuanzi_container_" + a);
-            b && (b.style.display = "none")
-        })
-    },
-    shows: function() {
-        this.bszs.map(function(a) {
-            var b = document.getElementById("busuanzi_container_" + a);
-            b && (b.style.display = "inline")
-        })
-    }
-};
+        (d = function () {
+            for (var a = 0, c = b.length; c > a; a++) b[a].apply(document);
+            b = [];
+        }),
+        (e = function () {
+            a ||
+                ((a = !0),
+                d.call(window),
+                document.removeEventListener
+                    ? document.removeEventListener("DOMContentLoaded", e, !1)
+                    : document.attachEvent &&
+                      (document.detachEvent("onreadystatechange", e),
+                      window == window.top && (clearInterval(c), (c = null))));
+        }),
+        document.addEventListener
+            ? document.addEventListener("DOMContentLoaded", e, !1)
+            : document.attachEvent &&
+              (document.attachEvent("onreadystatechange", function () {
+                  /loaded|complete/.test(document.readyState) && e();
+              }),
+              window == window.top &&
+                  (c = setInterval(function () {
+                      try {
+                          a || document.documentElement.doScroll("left");
+                      } catch (b) {
+                          return;
+                      }
+                      e();
+                  }, 5)));
+})(),
+    (bszCaller = {
+        fetch: function (a, b) {
+            var c =
+                "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
+            (window[c] = this.evalCall(b)),
+                (a = a.replace("=BusuanziCallback", "=" + c)),
+                (scriptTag = document.createElement("SCRIPT")),
+                (scriptTag.type = "text/javascript"),
+                (scriptTag.defer = !0),
+                (scriptTag.src = a),
+                (scriptTag.referrerPolicy = "no-referrer-when-downgrade"),
+                document.getElementsByTagName("HEAD")[0].appendChild(scriptTag);
+        },
+        evalCall: function (a) {
+            return function (b) {
+                ready(function () {
+                    try {
+                        a(b), scriptTag.parentElement.removeChild(scriptTag);
+                    } catch (c) {
+                        bszTag.hides();
+                    }
+                });
+            };
+        },
+    }),
+    bszCaller.fetch(
+        "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",
+        function (a) {
+            bszTag.texts(a), bszTag.shows();
+        },
+    ),
+    (bszTag = {
+        bszs: ["site_pv", "page_pv", "site_uv"],
+        texts: function (a) {
+            this.bszs.map(function (b) {
+                var c = document.getElementById("busuanzi_value_" + b);
+                c && (c.innerHTML = a[b]);
+            });
+        },
+        hides: function () {
+            this.bszs.map(function (a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "none");
+            });
+        },
+        shows: function () {
+            this.bszs.map(function (a) {
+                var b = document.getElementById("busuanzi_container_" + a);
+                b && (b.style.display = "inline");
+            });
+        },
+    });
 ```
 
 其中，我们重点关注这段代码：
@@ -192,14 +207,14 @@ fetch: function(a, b) {
 
 [Preventing Tracking Prevention Tracking | WebKit](https://webkit.org/blog/9661/preventing-tracking-prevention-tracking/#:~:text=Origin%2DOnly%20Referrer%20For%20All%20Third%2DParty%20Requests)
 
-> __Origin-Only Referrer For All Third-Party Requests__
+> **Origin-Only Referrer For All Third-Party Requests**
 > ITP now downgrades all cross-site request referrer headers to just the page’s origin. Previously, this was only done for cross-site requests to classified domains.
-> 
+>
 > As an example, a request to https://images.example that would previously contain the referrer header “https://store.example/baby/strollers/deluxe-stroller-navy-blue.html” will now be reduced to just “https://store.example/”.
 
-原来，Safari 的 __阻止跨站跟踪__ 功能会将跨站请求中的 `Referer` 头全部降级为页面的根路径。效果就像 `strict-origin-when-cross-origin`。这无疑对 busuanzi 的请求生效，因此开启了 __阻止跨站跟踪__ 的 Safari 便会遇到这个问题。
+原来，Safari 的 **阻止跨站跟踪** 功能会将跨站请求中的 `Referer` 头全部降级为页面的根路径。效果就像 `strict-origin-when-cross-origin`。这无疑对 busuanzi 的请求生效，因此开启了 **阻止跨站跟踪** 的 Safari 便会遇到这个问题。
 
-显然要求每个用户关闭 __阻止跨站跟踪__ 是奇怪的，在 busuanzi 作者主动修改 API 不再依赖 `Referer` 头前，似乎这成了一个无解的问题。
+显然要求每个用户关闭 **阻止跨站跟踪** 是奇怪的，在 busuanzi 作者主动修改 API 不再依赖 `Referer` 头前，似乎这成了一个无解的问题。
 
 ## 我的解决方案
 

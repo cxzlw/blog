@@ -4,9 +4,9 @@ date: 2023-08-04 15:32:59
 license: BY-SA
 excerpt: 最近在参与某 OJ 的开发，过程中我们需要一个权限系统。作为一个热爱 MC 的开发者，我很喜欢 luckperms 的设计，于是这个小东西就出来了。在这里给大家分享我们的权限系统设计。
 tags:
-  - 权限系统
-  - Python
-  - cxzlw
+    - 权限系统
+    - Python
+    - cxzlw
 ---
 
 最近在参与某 OJ 的开发，过程中我们需要一个权限系统。作为一个热爱 MC 的开发者，我很喜欢 luckperms 的设计，于是这个小东西就出来了。在这里给大家分享我们的权限系统设计。
@@ -20,7 +20,9 @@ tags:
 ## 术语
 
 ### 权限组
+
 权限组储存了以下信息
+
 - 权限组的名字
 - 权限组的权重，这个权重只影响直属节点
 - 权限组的成员，也就是用户
@@ -34,7 +36,9 @@ tags:
 一般情况下，继承自某个权限组的新权限组，权重应当更高，这样才能覆盖某些权限。同时，检查权限时，如果遇到相同权重却互相矛盾的权限节点，无法保证其结果。
 
 ### 权限节点
+
 权限节点储存了以下信息
+
 - 一个权限 id，代表一个权限
 - 一个 `bool` 值，代表是否拥有上述权限
 
@@ -45,6 +49,7 @@ tags:
 我们一般使用值为 `False` 的权限节点来覆盖父权限组下的某些权限。
 
 ### 权限 id
+
 权限是一个概念，在这里我们以权限 id 的形式来代表某种权限。
 
 这个 id 是一个字符串，其没有具体的命名规则。具体由使用者制定。但我们建议你使用形如 `user.login`，`problem.edit`，`problem.1001.edit` 的格式命名。
@@ -52,6 +57,7 @@ tags:
 ## 使用方式
 
 ### 检查权限
+
 ```python
 from permission import check_permission
 
@@ -61,6 +67,7 @@ print(check_permission(user))
 ```
 
 ### 权限节点
+
 ```python
 user: PermissionGroup = ...  # 自行实现获得 PermissionGroup 对象的代码
 
@@ -76,6 +83,7 @@ this_node.value = False  # 修改该权限节点的值，True 代表有这个权
 ```
 
 ### 权限组
+
 ```python
 # instance 方法可以保证 name 相同时，每次运行都是同一个 PermissionGroup
 # 方便你维护一个存储了你所有权限结构的文件
@@ -97,11 +105,13 @@ this_group.nodes.remove(permission_node)  # 从该权限组移除权限节点
 ```
 
 ### 针对单个用户修改权限
+
 思路是给用户分配一个单独的高权限 Group，再给这个 Group 分配 Node
 
 ## 代码分享
 
 ### models/db.py
+
 ```python
 from pony.orm import Database
 
@@ -110,6 +120,7 @@ db = Database()
 ```
 
 ### models/user.py
+
 ```python
 from pony.orm import Required, Set, Optional
 
@@ -117,12 +128,13 @@ from .db import db
 
 
 class User(db.Entity):
-    # You should add fields you need here. 
+    # You should add fields you need here.
     permission_groups = Set("PermissionGroup")
 
 ```
 
 ### models/permission_group.py
+
 ```python
 from pony.orm import Required, Set, db_session
 
@@ -162,6 +174,7 @@ class PermissionGroup(db.Entity):
 ```
 
 ### models/permission_node.py
+
 ```python
 from pony.orm import Required, db_session
 
@@ -177,6 +190,7 @@ class PermissionNode(db.Entity):
 ```
 
 ### permission/\_\_init\_\_.py
+
 ```python
 from queue import Queue
 

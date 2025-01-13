@@ -1,11 +1,11 @@
 /* global hexo */
 
-'use strict';
+"use strict";
 
 function mermaid(args, content) {
-  return `
+    return `
 <pre>
-<code class="mermaid" ${args.join(' ')}>
+<code class="mermaid" ${args.join(" ")}>
 ${content}
 </code>
 </pre>`;
@@ -16,4 +16,4 @@ ${content}
   text
   {% endmermaid %}
  */
-hexo.extend.tag.register('mermaid', mermaid, { ends: true });
+hexo.extend.tag.register("mermaid", mermaid, { ends: true });

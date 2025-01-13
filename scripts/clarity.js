@@ -1,5 +1,5 @@
 hexo.extend.injector.register(
-    "head_end", 
+    "head_end",
     `
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -8,5 +8,5 @@ hexo.extend.injector.register(
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "okjqv25bf6");
     </script>
-    `
-)
+    `,
+);
