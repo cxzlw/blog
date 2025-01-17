@@ -13,7 +13,11 @@ title: 关于我
 
 生日：2008 / 04 / 04
 
-邮箱：[cxz.lwnb@gmail.com](mailto:cxz.lwnb@gmail.com)
+邮箱：
+
+- [cxz.lwnb@gmail.com](mailto:cxz.lwnb@gmail.com)
+- [wsc_zds@qq.com](mailto:wsc_zds@qq.com)
+- [cxzlw@cock.li](mailto:cxzlw@cock.li)
 
 如果你想知道的话，没错咱是女高呢，嘻嘻\~
 
