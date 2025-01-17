@@ -16,7 +16,7 @@ jobs:
           ref: main
 
       - name: Set Timezone
-        uses: szenius/set-timezone@v1.2
+        uses: szenius/set-timezone@v2.0
         with:
           # Desired timezone for Linux
           timezoneLinux: "Asia/Shanghai"
@@ -25,7 +25,6 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 10
-          # run_install: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -36,6 +35,15 @@ jobs:
       - name: Install Dependencies
         run: |
           pnpm install
+
+      - name: Cache Hexo Dists
+        uses: actions/cache@v4
+        with:
+          path: public
+          key: hexo-dists-${{ hashFiles('public/**/*') }}
+          restore-keys: |
+            hexo-dists-${{ hashFiles('public/**/*') }}
+            hexo-dists-
 
       - name: Build
         run: |
