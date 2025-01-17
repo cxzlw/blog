@@ -39,8 +39,10 @@ jobs:
       - name: Cache Hexo Dists
         uses: actions/cache@v4
         with:
-          path: public
-          key: hexo-dists-${{ hashFiles('**') }}
+          path: |
+            db.json
+            public
+          key: hexo-dists-${{ hashFiles('{.github,scaffolds,scripts,source,_config.yml,_config.landscape.yml,_config.fluid.yml,pnpm-lock.yaml,workbox-config.js}') }}
           restore-keys: |
             hexo-dists-${{ hashFiles('**') }}
             hexo-dists-
