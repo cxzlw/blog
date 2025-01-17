@@ -47,7 +47,7 @@ jobs:
                   pnpm install hexo-cli -g
                   pnpm install
 
-            - name: Deploy
+            - name: Build
               run: |
                   git clone https://github.com/cxzlw/cxzlw.github.io.git .deploy_git
                   hexo clean
@@ -55,3 +55,14 @@ jobs:
                   pnpm workbox injectManifest workbox-config.js
                   # pnpm gulp
                   hexo deploy
+
+            - name: Upload Artifacts
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: public/
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
