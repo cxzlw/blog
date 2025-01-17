@@ -7,7 +7,7 @@ tags:
     - busuanzi
     - Fluid
     - cxzlw
-license: "BY-NC-SA"
+license: "BY-SA"
 excerpt: "近期，我的博客在 Safari 中，文章访问量异常的大。经过抓包，确认了问题与 Referer 头相关。然而，Referrer-Policy 并没有解决问题。这与其接口设计有关。本文将进行解释，并提出我的解决方案。"
 ---
 
