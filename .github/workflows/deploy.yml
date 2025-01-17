@@ -42,9 +42,9 @@ jobs:
           path: |
             db.json
             public
-          key: hexo-dists-${{ hashFiles('{.github,scaffolds,scripts,source}/**') }}-${{ hashFiles('{_config.yml,_config.landscape.yml,_config.fluid.yml,pnpm-lock.yaml,workbox-config.js}') }}
+          key: hexo-dists-${{ hashFiles('source/**') }}-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
-            hexo-dists-${{ hashFiles('{.github,scaffolds,scripts,source}/**') }}-${{ hashFiles('{_config.yml,_config.landscape.yml,_config.fluid.yml,pnpm-lock.yaml,workbox-config.js}') }}
+            hexo-dists-${{ hashFiles('source/**') }}-${{ hashFiles('pnpm-lock.yaml') }}
             hexo-dists-
 
       - name: Build
