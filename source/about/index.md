@@ -63,6 +63,6 @@ GD 这块没有那么明显，所以明确自己是 trans 以及开始 HRT 之�
     const birthday = new Date("2008-04-04");
     const now = new Date();
     const age = Math.floor((now - birthday) / 1000 / 3600 / 24 / 365); 
-    if (age <= 18) age_ele.innerText = "目前是 " + age + " 岁";
+    if (age <= 17) age_ele.innerText = "目前是 " + age + " 岁";
     age_ele.style.display = "inline";
 </script>
