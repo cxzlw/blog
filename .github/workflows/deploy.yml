@@ -44,7 +44,7 @@ jobs:
 
       - name: Build
         run: |
-          hexo generate
+          pnpm hexo generate
           pnpm workbox injectManifest workbox-config.js
 
       - name: Upload Artifacts
