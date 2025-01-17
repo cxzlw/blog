@@ -60,7 +60,7 @@ jobs:
       pages: write
 
     environment:
-      name: "${{github.event_name != 'push' && 'github-pages' || 'github-pages-preview'}}"
+      name: "${{github.event_name == 'push' && 'github-pages' || 'github-pages-preview'}}"
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
