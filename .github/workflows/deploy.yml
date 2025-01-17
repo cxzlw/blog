@@ -42,9 +42,9 @@ jobs:
           path: |
             db.json
             public
-          key: hexo-dists-${{ hashFiles('source/**') }}-${{ hashFiles('pnpm-lock.yaml') }}
+          key: hexo-dists-${{ hashFiles('source/**', 'pnpm-lock.yaml') }}
           restore-keys: |
-            hexo-dists-${{ hashFiles('source/**') }}-${{ hashFiles('pnpm-lock.yaml') }}
+            hexo-dists-${{ hashFiles('source/**', 'pnpm-lock.yaml') }}
             hexo-dists-
 
       - name: Build
