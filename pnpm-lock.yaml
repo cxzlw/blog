@@ -91,8 +91,8 @@ importers:
         specifier: ^7.25.4
         version: 7.25.4(@babel/core@7.25.2)
       '@babel/register':
-        specifier: ^7.24.6
-        version: 7.24.6(@babel/core@7.25.2)
+        specifier: ^7.25.9
+        version: 7.25.9(@babel/core@7.25.2)
       hexo-cli:
         specifier: ^4.3.2
         version: 4.3.2
@@ -674,8 +674,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0 || ^8.0.0-0 <8.0.0
 
-  '@babel/register@7.24.6':
-    resolution: {integrity: sha512-WSuFCc2wCqMeXkz/i3yfAAsxwWflEgbVkZzivgAmXl/MxrXeoYFZOOPllbC8R8WTF7u61wSRQtDVZ1879cdu6w==}
+  '@babel/register@7.25.9':
+    resolution: {integrity: sha512-8D43jXtGsYmEeDvm4MWHYUpWf8iiXgWYx3fW7E7Wb7Oe6FWqJPl5K6TuFW0dOwNZzEE5rjlaSJYH9JjrUKJszA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -5087,7 +5087,7 @@ snapshots:
       '@babel/types': 7.25.6
       esutils: 2.0.3
 
-  '@babel/register@7.24.6(@babel/core@7.25.2)':
+  '@babel/register@7.25.9(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
       clone-deep: 4.0.1
