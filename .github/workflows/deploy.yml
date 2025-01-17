@@ -40,9 +40,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: public
-          key: hexo-dists-${{ hashFiles('public/**/*') }}
+          key: hexo-dists-${{ hashFiles('!(node_modules)/**') }}
           restore-keys: |
-            hexo-dists-${{ hashFiles('public/**/*') }}
+            hexo-dists-${{ hashFiles('!(node_modules)/**') }}
             hexo-dists-
 
       - name: Build
