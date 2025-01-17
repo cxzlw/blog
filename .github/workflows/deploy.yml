@@ -37,8 +37,6 @@ jobs:
           cache: "pnpm"
 
       - name: Setup Hexo
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
         run: |
           # pnpm install hexo-cli -g
           pnpm install
