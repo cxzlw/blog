@@ -55,17 +55,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
 
+    if: github.event_name == 'push'
+
     permissions:
       id-token: write
       pages: write
 
     environment:
-      name: "${{github.event_name == 'push' && 'github-pages' || 'github-pages-preview'}}"
+      name: "github-pages"
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          preview: "${{github.event_name != 'push'}}"
