@@ -36,9 +36,8 @@ jobs:
           node-version: "20"
           cache: "pnpm"
 
-      - name: Setup Hexo
+      - name: Install Dependencies
         run: |
-          # pnpm install hexo-cli -g
           pnpm install
 
       - name: Build
