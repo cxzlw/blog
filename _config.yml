@@ -16,9 +16,6 @@ keywords:
     - "创新者.老王"
     - "创新者"
     - "老王"
-    - "Earthno1"
-    - "FatalError"
-    - "路过的某个学渣"
     - "博客"
     - "技术博客"
 author: cxzlw
@@ -43,7 +40,6 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-    - baidu_verify_codeva-0rhRRODu4H.html
     - keybase.txt
     - robots.txt
     - b2a09667745e494db48ac5b915a14789.txt
