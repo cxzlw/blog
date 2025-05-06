@@ -1,5 +1,5 @@
 ---
-title: JetBrains 2024.3.3 激活教程及许可证服务器
+title: JetBrains 2025.1 激活教程及许可证服务器
 date: 2024-10-22 22:01:48
 tags:
 excerpt: 本文将介绍使用来自 热心大佬 的方案，激活最新版 Idea 等 JetBrains 产品的方法。同时提供一个激活服务器地址，供各位用于激活未被 热心大佬 覆盖的插件。
@@ -7,17 +7,19 @@ license: "BY-NC-SA"
 ---
 
 {% note info %}
-`ls.cxzlw.top` 现在由多个后端提供服务，预期会有更好的稳定性，如果出现问题可以在本文评论反馈。
+`ls.cxzlw.top` 由于服务器过期已经无法访问，新的许可证服务器 `ls.justtonight.monster` 由 `热血群友:曹贼` 提供，感谢！
+
+曾经配置过 `ls.cxzlw.top` 的朋友们，`power.conf` 的内容不需要更改，直接替换成新的地址`ls.justtonight.monster` 即可。
 {% endnote %}
 
-JetBrains 系最新版本号已经到了 2024.3.3，之前版本的激活方案经测试，在一些小调整后依然可用。本文将介绍使用来自 `热心大佬` 的方案，激活最新版 Idea 等 JetBrains 产品的方法。同时提供一个激活服务器地址，供各位用于激活未被 `热心大佬` 覆盖的插件。
+JetBrains 系最新版本号已经到了 2025.1，之前版本的激活方案经测试，在一些小调整后依然可用。本文将介绍使用来自 `热心大佬` 的方案，激活最新版 Idea 等 JetBrains 产品的方法。同时提供一个激活服务器地址，供各位用于激活未被 `热心大佬` 覆盖的插件。
 
 ## 成果展示
 
 {% gi total 3 %}
-![PyCharm 2024.2.4](../img/image-27.png)
-![WebStorm 2024.2.4](../img/image-28.png)
-![IDEA 2024.2.4](../img/image-30.png)
+![PyCharm 2025.1](../img/image.png)
+![WebStorm 2025.1](../img/image-29.png)
+![IDEA 2025.1](../img/image-31.png)
 {% endgi %}
 
 ## 1. 下载破解补丁
@@ -58,7 +60,7 @@ PREFIX,https://account.jetbrains.com/lservice/rpc/validateKey.action
 PREFIX,https://account.jetbrains.com.cn/lservice/rpc/validateKey.action
 ```
 
-同时，为了使用我提供的 JetBrains 激活服务器，还需要往 `config-jetbrains/power.conf` 的末尾添加这部分内容[^2]：
+同时，为了使用 `热血群友:曹贼` 提供的 JetBrains 激活服务器，还需要往 `config-jetbrains/power.conf` 的末尾添加这部分内容[^2]：
 
 ```properties
 [Result]
@@ -88,7 +90,7 @@ EQUAL,11246144113351962537727803356337763121708081047804487791300358391464817209
 在激活时选择 `许可证服务器`，并填入下面的地址：
 
 ```
-https://ls.cxzlw.top/
+https://ls.justtonight.monster/
 ```
 
 {% gi total 2 %}
@@ -108,4 +110,4 @@ https://ls.cxzlw.top/
 
 [^1]: [JetBrains 新版本区域选择的坑](https://zhile.io/2024/09/05/jetbrains-2024-2-region.html)
 
-[^2]: 内容来自 [ls.cxzlw.top](https://ls.cxzlw.top/)
+[^2]: 内容来自 ~~[ls.cxzlw.top](https://ls.cxzlw.top/)~~ [ls.justtonight.monster](https://ls.justtonight.monster/)
