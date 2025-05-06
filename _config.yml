@@ -7,17 +7,17 @@ title: 创新者老王的博客
 subtitle: ""
 description: ""
 keywords:
-    - "cxzlw"
-    - "Blog"
-    - "Thomas Wang"
-    - "Thomas"
-    - "Wang"
-    - "创新者老王"
-    - "创新者.老王"
-    - "创新者"
-    - "老王"
-    - "博客"
-    - "技术博客"
+  - "cxzlw"
+  - "Blog"
+  - "Thomas Wang"
+  - "Thomas"
+  - "Wang"
+  - "创新者老王"
+  - "创新者.老王"
+  - "创新者"
+  - "老王"
+  - "博客"
+  - "技术博客"
 author: cxzlw
 language: zh-CN
 timezone: "Asia/Shanghai"
@@ -28,8 +28,8 @@ url: https://blog.cxzlw.top
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
-    trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-    trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -40,44 +40,44 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-    - keybase.txt
-    - robots.txt
-    - b2a09667745e494db48ac5b915a14789.txt
+  - keybase.txt
+  - robots.txt
+  - b2a09667745e494db48ac5b915a14789.txt
 
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
-    enable: true # Open external links in new tab
-    field: site # Apply to the whole site
-    exclude: ""
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ""
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-    enable: true
-    line_number: true
-    auto_detect: false
-    tab_replace: ""
-    wrap: true
-    hljs: false
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ""
+  wrap: true
+  hljs: false
 prismjs:
-    enable: false
-    preprocess: true
-    line_number: true
-    tab_replace: ""
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ""
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-    path: ""
-    per_page: 10
-    order_by: -date
+  path: ""
+  per_page: 10
+  order_by: -date
 
 # Category & Tag
 default_category: uncategorized
@@ -113,31 +113,34 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: fluid
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-    - type: git
-      # repo: https://github.com/cxzlw/cxzlw.github.io.git
-      repo: git@github.com:cxzlw/cxzlw.github.io.git
-      branch: master
+# # Deployment
+# ## Docs: https://hexo.io/docs/one-command-deployment
+# deploy:
+#   - type: git
+#     # repo: https://github.com/cxzlw/cxzlw.github.io.git
+#     repo: git@github.com:cxzlw/cxzlw.github.io.git
+#     branch: master
 
 sitemap:
-    path: sitemap.xml
+  path: sitemap.xml
 
 tikzjax:
-    # Enable TikZ rendering for all posts and pages.
-    # Or you can enable it per post by adding `tikzjax: true` to the front-matter.
-    every_page: false
-    # Add CSS to pages which contain TikZ graphs.
-    append_css: true
-    # URL of the font CSS file.
-    font_css_url: "https://cdn.jsdelivr.net/npm/node-tikzjax@latest/css/fonts.css"
-    # Additional options that will be passed to node-tikzjax.
-    # See: https://github.com/prinsss/node-tikzjax/#usage
-    # tikzjax_options:
-    #   showConsole: false
+  # Enable TikZ rendering for all posts and pages.
+  # Or you can enable it per post by adding `tikzjax: true` to the front-matter.
+  every_page: false
+  # Add CSS to pages which contain TikZ graphs.
+  append_css: true
+  # URL of the font CSS file.
+  font_css_url: "https://cdn.jsdelivr.net/npm/node-tikzjax@latest/css/fonts.css"
+  # Additional options that will be passed to node-tikzjax.
+  # See: https://github.com/prinsss/node-tikzjax/#usage
+  # tikzjax_options:
+  #   showConsole: false
 
 browsersync:
-    logLevel: "warn"
-    ghostMode:
-        scroll: true
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+
+marked:
+  breaks: false

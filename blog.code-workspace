@@ -8,5 +8,8 @@
         "markdown.copyFiles.destination": {
             "*": "/source/img/",
         },
+        "yaml.schemas": {
+            "https://json.schemastore.org/yamllint.json": "file:///c%3A/Users/cxzlw/blog/_config.yml",
+        },
     },
 }
