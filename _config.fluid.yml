@@ -1001,13 +1001,13 @@ links:
         title: "洛忆雨 Yiur",
         intro: "一个平平无奇的 baka|是学 ctf 的姐姐哦~",
         link: "https://yiurblog.top/",
-        avatar: "https://yiurblog.top/img/zhizhi.png",
+        avatar: "https://www.yiurblog.top/head.jpg",
       }
     - {
-        title: "N552AA",
-        intro: "啥也没有|是可爱妹妹哦~",
-        link: "https://n552aa.github.io/",
-        avatar: "https://n552aa.github.io/img/favicon.png",
+        title: "ctww",
+        intro: "很厉害的前端佬!",
+        link: "https://blog.haoye.plus/",
+        avatar: "http://avatars.githubusercontent.com/u/65394471?v=4",
       }
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
