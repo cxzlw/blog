@@ -710,7 +710,7 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: true
+    enable: false
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
@@ -1005,7 +1005,7 @@ links:
       }
     - {
         title: "ctww",
-        intro: "很厉害的前端佬!",
+        intro: "算法前端动画样样能行的超全能学长!",
         link: "https://blog.haoye.plus/",
         avatar: "http://avatars.githubusercontent.com/u/65394471?v=4",
       }
@@ -1022,7 +1022,7 @@ links:
   # 评论插件
   # Comment plugin
   comments:
-    enable: true
+    enable: false
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
