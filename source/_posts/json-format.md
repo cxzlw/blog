@@ -171,7 +171,7 @@ null
 {
     "name": "cxzlw", // string
     "age": 16, // number
-    "gender": "mtf", // also string（夹杂私货）
+    "gender": "female", // also string（夹杂私货）
     "balance": 123.45, // also number
     "is_student": true, // boolean
     "hobbies": [
